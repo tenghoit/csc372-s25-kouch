@@ -40,7 +40,7 @@ class Cube:
 
 
 
-    def reset(self):
+    def reset(self) -> None:
         self.faceA: list[str] = ['W' for i in range(4)]
         self.faceB: list[str] = ['B' for i in range(4)]
         self.faceC: list[str] = ['R' for i in range(4)]
@@ -48,16 +48,27 @@ class Cube:
         self.faceE: list[str] = ['G' for i in range(4)]
         self.faceF: list[str] = ['Y' for i in range(4)]
 
-    def turn(self):
+    def isSolved(self) -> bool:
+        faces: list[list[str]] = [self.faceA, self.faceB, self.faceC, self.faceD, self.faceE, self.faceF]
+        unique_faces: list[str] = [set(face) for face in faces]
+
+        if(len(unique_faces) == 6):
+            return True
+        else:
+            return False
+
+
+    def turn(self) -> None:
         pass
 
 
 
 def main():
 
-    micky = Cube()
+    mike = Cube()
 
-    micky.print()
+    mike.print()
+    print(mike.isSolved())
 
 
 if (__name__ == '__main__'):
