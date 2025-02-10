@@ -9,7 +9,7 @@ class Cube:
         self.faceE: list[str] = ['G' for i in range(4)]
         self.faceF: list[str] = ['Y' for i in range(4)]
 
-    def print(self):
+    def print(self) -> None:
         # print(f'      +-----+')
         # print(f'      | 0 1 |')
         # print(f'      | 2 3 |')
@@ -25,18 +25,19 @@ class Cube:
         # print(f'      +-----+')
 
         print(f'      +-----+')
-        print(f'      | {} {} |')
-        print(f'      | {} {} |')
+        print(f'      | {self.faceC[0]} {self.faceC[1]} |')
+        print(f'      | {self.faceC[2]} {self.faceC[3]} |')
         print(f'+-----+-----+-----+')
-        print(f'| {} {} | {} {} | {} {} |')
-        print(f'| {} {} | {} {} | {} {} |')
+        print(f'| {self.faceB[1]} {self.faceB[3]} | {self.faceA[0]} {self.faceA[1]} | {self.faceD[2]} {self.faceD[0]} |')
+        print(f'| {self.faceB[0]} {self.faceB[2]} | {self.faceA[2]} {self.faceA[3]} | {self.faceD[3]} {self.faceD[1]} |')
         print(f'+-----+-----+-----+')
-        print(f'      | {} {} |')
-        print(f'      | {} {} |')
+        print(f'      | {self.faceE[3]} {self.faceE[2]} |')
+        print(f'      | {self.faceE[1]} {self.faceE[0]} |')
         print(f'      +-----+')
-        print(f'      | {} {} |')
-        print(f'      | {} {} |')
+        print(f'      | {self.faceF[2]} {self.faceF[3]} |')
+        print(f'      | {self.faceF[0]} {self.faceF[1]} |')
         print(f'      +-----+')
+
 
 
     def reset(self):
@@ -49,4 +50,16 @@ class Cube:
 
     def turn(self):
         pass
+
+
+
+def main():
+
+    micky = Cube()
+
+    micky.print()
+
+
+if (__name__ == '__main__'):
+    main()
 
