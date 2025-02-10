@@ -50,15 +50,47 @@ class Cube:
 
     def isSolved(self) -> bool:
         faces: list[list[str]] = [self.faceA, self.faceB, self.faceC, self.faceD, self.faceE, self.faceF]
-        unique_faces: list[str] = [set(face) for face in faces]
 
-        if(len(unique_faces) == 6):
-            return True
+        for face in faces:
+            if(len(set(face)) != 1):
+                return False
         else:
-            return False
+            return True
 
-
-    def turn(self) -> None:
+    def rotateBottomClockwise(self) -> None:
+        pass
+    
+    def rotateBottomCounterClockwise(self) -> None:
+        pass
+    
+    def rotateTopClockwise(self) -> None:
+        pass
+    
+    def rotateTopCounterClockwise(self) -> None:
+        pass
+    
+    def rotateLeftClockwise(self) -> None:
+        pass
+    
+    def rotateLeftCounterClockwise(self) -> None:
+        pass
+    
+    def rotateRightClockwise(self) -> None:
+        pass
+    
+    def rotateRightCounterClockwise(self) -> None:
+        pass
+    
+    def rotateFrontClockwise(self) -> None:
+        pass
+    
+    def rotateFrontCounterClockwise(self) -> None:
+        pass
+    
+    def rotateBackClockwise(self) -> None:
+        pass
+    
+    def rotateBackCounterClockwise(self) -> None:
         pass
 
 
