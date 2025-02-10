@@ -1,5 +1,33 @@
 
 
+class Cubie:
+    def __init__(self, top=None, bot=None, front=None, back=None, left=None, right=None) -> None:
+        self.top = top
+        self.bot = bot
+        self.front = front
+        self.back = back
+        self.left = left
+        self.right = right
+
+    def rotateZClockwise(self) -> None:
+        self.top, self.back, self.bot, self.front = self.back, self.bot, self.front, self.top
+    
+    def rotateZCounterClockwise(self) -> None:
+        self.top, self.back, self.bot, self.front = self.front, self.top, self.back, self.bot
+    
+    def rotateXClockwise(self) -> None:
+        self.back, self.right, self.front, self.left = self.right, self.front, self.left, self.back
+    
+    def rotateXCounterClockwise(self) -> None:
+        self.back, self.right, self.front, self.left = self.left, self.back, self.right, self.front
+    
+    def rotateYClockwise(self) -> None:
+        self.top, self.right, self.bot, self.left = self.right, self.bot, self.left, self.top
+    
+    def rotateYCounterClockwise(self) -> None:
+        self.top, self.right, self.bot, self.left = self.left, self.top, self.right, self.bot
+    
+
 class Cube:
     def __init__(self) -> None:
         self.faceA: list[str] = ['W' for i in range(4)]
