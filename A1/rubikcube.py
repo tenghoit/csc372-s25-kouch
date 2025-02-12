@@ -1,13 +1,14 @@
 
 
 class Cubie:
-    def __init__(self, top=None, bot=None, front=None, back=None, left=None, right=None) -> None:
+    def __init__(self, top=None, bot=None, front=None, back=None, left=None, right=None, goalPosition: list[int]=None) -> None:
         self.top = top
         self.bot = bot
         self.front = front
         self.back = back
         self.left = left
         self.right = right
+        self.goalPosition: list[int] = goalPosition
 
     def rotateXCounterClockwise(self) -> None:
         self.top, self.back, self.bot, self.front = self.back, self.bot, self.front, self.top
@@ -53,147 +54,85 @@ class Cubie:
 
     
 
-class Cube2:
+class Cube:
     def __init__(self) -> None:
         
-        #up
-        self.UFL = Cubie(top='Y', front='B', left='O')
-        self.UFR = Cubie(top='Y', front='B', right='R')
+        self.cubies = {
+            'UFL': Cubie(top='Y', front='B', left='O', goalPosition=[0, 0, 1]),
+            'UFR': Cubie(top='Y', front='B', right='R', goalPosition=[1, 0, 1]),
+            'UBL': Cubie(top='Y', back='G', left='O', goalPosition=[0, 1, 1]),
+            'UBR': Cubie(top='Y', back='G', right='R', goalPosition=[1, 1, 1]),
+            'DFL': Cubie(bot='W', front='B', left='O', goalPosition=[0, 0, 0]),
+            'DFR': Cubie(bot='W', front='B', right='R', goalPosition=[1, 0, 0]),
+            'DBL': Cubie(bot='W', back='G', left='O', goalPosition=[0, 1, 0]),
+            'DBR': Cubie(bot='W', back='G', right='R', goalPosition=[1, 1, 0])
+        }
 
-        self.UBL = Cubie(top='Y', back='G', left='O')
-        self.UBR = Cubie(top='Y', back='G', right='R')
+        # xyz cords of corner cubies
+        self.positions = {
+            'UFL': [0, 0, 1],
+            'UFR': [1, 0, 1],
+            'UBL': [0, 1, 1],
+            'UBR': [1, 1, 1],
+            'DFL': [0, 0, 0],
+            'DFR': [1, 0, 0],
+            'DBL': [0, 1, 0],
+            'DBR': [1, 1, 0]
+        }
 
-        #down
-        self.DFL = Cubie(bot='W', front='B', left='O')
-        self.DFR = Cubie(bot='W', front='B', right='R')
-
-        self.DBL = Cubie(bot='w', back='G', left='O')
-        self.DBR = Cubie(bot='W', back='G', right='R')
-
-        # indexes based on x, y, z cords
-        self.cubies = [
-            [
-                [self.DFL, self.UFL], 
-                [self.DBL, self.UBL]
-            ],
-            [
-                [self.DFR, self.UFR], 
-                [self.DBR, self.UBR]
-            ]
-        ]
+    def reset(self) -> None:
+        self.cubies = {
+            'UFL': Cubie(top='Y', front='B', left='O', goalPosition=[0, 0, 1]),
+            'UFR': Cubie(top='Y', front='B', right='R', goalPosition=[1, 0, 1]),
+            'UBL': Cubie(top='Y', back='G', left='O', goalPosition=[0, 1, 1]),
+            'UBR': Cubie(top='Y', back='G', right='R', goalPosition=[1, 1, 1]),
+            'DFL': Cubie(bot='W', front='B', left='O', goalPosition=[0, 0, 0]),
+            'DFR': Cubie(bot='W', front='B', right='R', goalPosition=[1, 0, 0]),
+            'DBL': Cubie(bot='w', back='G', left='O', goalPosition=[0, 1, 0]),
+            'DBR': Cubie(bot='W', back='G', right='R', goalPosition=[1, 1, 0])
+        }
     
 
     def print(self) -> None:
-        # print(f'      +-----+')
-        # print(f'      | {self.cubies[0][1][1].top} {self.cubies[1][1][1].top} |')
-        # print(f'      | {self.cubies[0][0][1].top} {self.cubies[1][0][1].top} |')
-        # print(f'+-----+-----+-----+')
-        # print(f'| {self.cubies[0][1][1].left} {self.cubies[0][0][1].left} | {self.cubies[0][0][1].front} {self.cubies[1][0][1].front} | {self.cubies[1][0][1].right} {self.cubies[1][1][1].right} |')
-        # print(f'| {self.cubies[0][1][0].left} {self.cubies[0][0][0].left} | {self.cubies[0][0][0].front} {self.cubies[1][0][0].front} | {self.cubies[1][0][0].right} {self.cubies[1][1][0].right} |')
-        # print(f'+-----+-----+-----+')
-        # print(f'      | {self.cubies[0][0][0].bot} {self.cubies[1][0][0].bot} |')
-        # print(f'      | {self.cubies[0][1][0].bot} {self.cubies[1][1][0].bot} |')
-        # print(f'      +-----+')
-        # print(f'      | {self.cubies[0][1][0].back} {self.cubies[1][1][0].back} |')
-        # print(f'      | {self.cubies[0][1][1].back} {self.cubies[1][1][1].back} |')
-        # print(f'      +-----+')
 
         print(f'      +-----+')
-        print(f'      | {self.UBL.top} {self.UBR.top} |')
-        print(f'      | {self.UFL.top} {self.UFR.top} |')
+        print(f'      | {self.cubies['UBL'].top} {self.cubies['UBR'].top} |')
+        print(f'      | {self.cubies['UFL'].top} {self.cubies['UFR'].top} |')
         print(f'+-----+-----+-----+')
-        print(f'| {self.UBL.left} {self.UFL.left} | {self.UFL.front} {self.UFR.front} | {self.UFR.right} {self.UBR.right} |')
-        print(f'| {self.DBL.left} {self.DFL.left} | {self.DFL.front} {self.DFR.front} | {self.DFR.right} {self.DBR.right} |')
+        print(f'| {self.cubies['UBL'].left} {self.cubies['UFL'].left} | {self.cubies['UFL'].front} {self.cubies['UFR'].front} | {self.cubies['UFR'].right} {self.cubies['UBR'].right} |')
+        print(f'| {self.cubies['DBL'].left} {self.cubies['DFL'].left} | {self.cubies['DFL'].front} {self.cubies['DFR'].front} | {self.cubies['DFR'].right} {self.cubies['DBR'].right} |')
         print(f'+-----+-----+-----+')
-        print(f'      | {self.DFL.bot} {self.DFR.bot} |')
-        print(f'      | {self.DBL.bot} {self.DBR.bot} |')
+        print(f'      | {self.cubies['DFL'].bot} {self.cubies['DFR'].bot} |')
+        print(f'      | {self.cubies['DBL'].bot} {self.cubies['DBR'].bot} |')
         print(f'      +-----+')
-        print(f'      | {self.DBL.back} {self.DBR.back} |')
-        print(f'      | {self.UBL.back} {self.UBR.back} |')
+        print(f'      | {self.cubies['DBL'].back} {self.cubies['DBR'].back} |')
+        print(f'      | {self.cubies['UBL'].back} {self.cubies['UBR'].back} |')
         print(f'      +-----+')
+
+    def isSolved(self) -> None:
+        pass
 
 
     def rotateFrontClockwise(self) -> None:
-        self.UFL, self.UFR, self.DFR, self.DFL = self.DFL, self.UFL, self.UFR, self.DFR
+        self.cubies['UFL'], self.cubies['UFR'], self.cubies['DFR'], self.cubies['DFL'] = self.cubies['DFL'], self.cubies['UFL'], self.cubies['UFR'], self.cubies['DFR']
 
-        # self.cubies[0][0][1], self.cubies[1][0][1], self.cubies[1][0][0], self.cubies[0][0][0] = self.cubies[0][0][0], self.cubies[0][0][1], self.cubies[1][0][1], self.cubies[1][0][0]
-
-        temp = [self.UFR, self.DFR, self.DFL, self.UFL]
-        # temp = [self.cubies[0][0][1], self.cubies[1][0][1], self.cubies[1][0][0], self.cubies[0][0][0]]
+        temp = [self.cubies['UFR'], self.cubies['DFR'], self.cubies['DFL'], self.cubies['UFL']]
         for i in temp:
             i.rotateYClockwise()
 
 
-class Cube:
-    def __init__(self) -> None:
-        self.faceA: list[str] = ['W' for i in range(4)]
-        self.faceB: list[str] = ['B' for i in range(4)]
-        self.faceC: list[str] = ['R' for i in range(4)]
-        self.faceD: list[str] = ['O' for i in range(4)]
-        self.faceE: list[str] = ['G' for i in range(4)]
-        self.faceF: list[str] = ['Y' for i in range(4)]
+    def rotateFrontCounterClockwise(self) -> None:
+        self.cubies['UFL'], self.cubies['UFR'], self.cubies['DFR'], self.cubies['DFL'] = self.cubies['UFR'], self.cubies['DFR'], self.cubies['DFL'], self.cubies['UFL'],
 
-    def print(self) -> None:
-        # print(f'      +-----+')
-        # print(f'      | 0 1 |')
-        # print(f'      | 2 3 |')
-        # print(f'+-----+-----+-----+')
-        # print(f'| 1 3 | 0 1 | 2 0 |')
-        # print(f'| 0 2 | 2 3 | 3 1 |')
-        # print(f'+-----+-----+-----+')
-        # print(f'      | 3 2 |')
-        # print(f'      | 1 0 |')
-        # print(f'      +-----+')
-        # print(f'      | 2 3 |')
-        # print(f'      | 0 1 |')
-        # print(f'      +-----+')
+        temp = [self.cubies['UFL'], self.cubies['UFR'], self.cubies['DFR'], self.cubies['DFL']]
+        for i in temp:
+            i.rotateYCounterClockwise()
 
-        # print(f'      +-----+')
-        # print(f'      | {} {} |')
-        # print(f'      | {} {} |')
-        # print(f'+-----+-----+-----+')
-        # print(f'| {} {} | {} {} | {} {} |')
-        # print(f'| {} {} | {} {} | {} {} |')
-        # print(f'+-----+-----+-----+')
-        # print(f'      | {} {} |')
-        # print(f'      | {} {} |')
-        # print(f'      +-----+')
-        # print(f'      | {} {} |')
-        # print(f'      | {} {} |')
-        # print(f'      +-----+')
-
-        print(f'      +-----+')
-        print(f'      | {self.faceC[0]} {self.faceC[1]} |')
-        print(f'      | {self.faceC[2]} {self.faceC[3]} |')
-        print(f'+-----+-----+-----+')
-        print(f'| {self.faceB[1]} {self.faceB[3]} | {self.faceA[0]} {self.faceA[1]} | {self.faceD[2]} {self.faceD[0]} |')
-        print(f'| {self.faceB[0]} {self.faceB[2]} | {self.faceA[2]} {self.faceA[3]} | {self.faceD[3]} {self.faceD[1]} |')
-        print(f'+-----+-----+-----+')
-        print(f'      | {self.faceE[3]} {self.faceE[2]} |')
-        print(f'      | {self.faceE[1]} {self.faceE[0]} |')
-        print(f'      +-----+')
-        print(f'      | {self.faceF[2]} {self.faceF[3]} |')
-        print(f'      | {self.faceF[0]} {self.faceF[1]} |')
-        print(f'      +-----+')
-
-
-
-    def reset(self) -> None:
-        self.faceA: list[str] = ['W' for i in range(4)]
-        self.faceB: list[str] = ['B' for i in range(4)]
-        self.faceC: list[str] = ['R' for i in range(4)]
-        self.faceD: list[str] = ['O' for i in range(4)]
-        self.faceE: list[str] = ['G' for i in range(4)]
-        self.faceF: list[str] = ['Y' for i in range(4)]
-
-    def isSolved(self) -> bool:
-        faces: list[list[str]] = [self.faceA, self.faceB, self.faceC, self.faceD, self.faceE, self.faceF]
-
-        for face in faces:
-            if(len(set(face)) != 1):
-                return False
-        else:
-            return True
+    def rotateBackClockwise(self) -> None:
+        pass
+    
+    def rotateBackCounterClockwise(self) -> None:
+        pass
 
     def rotateBottomClockwise(self) -> None:
         pass
@@ -218,31 +157,33 @@ class Cube:
     
     def rotateRightCounterClockwise(self) -> None:
         pass
-    
-    def rotateFrontClockwise(self) -> None:
-        pass
-    
-    def rotateFrontCounterClockwise(self) -> None:
-        pass
-    
-    def rotateBackClockwise(self) -> None:
-        pass
-    
-    def rotateBackCounterClockwise(self) -> None:
-        pass
-
 
 
 def main():
 
-    mike = Cube2()
-    mike.print()
+    print('\n2x2 Rubik\'s cube')
+    blocky = Cube()
 
-    mike.rotateFrontClockwise()
-    mike.print()
+    while(True):
+
+        print('')
+        blocky.print()
+
+        print('\nOperations:')
+        print('0: Exit')
+        print('1: Rotate Front Clockwise')
+        print('2: Rotate Front Counterclockwise')
 
 
+        operation = int(input('\nSelect: '))
 
+        if(operation == 0):
+            break
+        elif(operation == 1): 
+            blocky.rotateFrontClockwise()
+        elif(operation == 2): 
+            blocky.rotateFrontCounterClockwise()
+            
 def cubieTest():
     sam = Cubie(top='Y', bot='W', front='B', back='G', left='O', right='R')
     sam.print()
