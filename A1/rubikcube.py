@@ -112,6 +112,14 @@ class Cube:
     def isSolved(self) -> None:
         pass
 
+    def __rotateClockwise(self, positions) -> None:
+        
+        if len(positions) < 2:
+            raise ValueError("You need at least two cubies to swap.")
+
+
+        pass
+
 
     def rotateFrontClockwise(self) -> None:
         self.cubies['UFL'], self.cubies['UFR'], self.cubies['DFR'], self.cubies['DFL'] = self.cubies['DFL'], self.cubies['UFL'], self.cubies['UFR'], self.cubies['DFR']
