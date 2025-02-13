@@ -22,10 +22,10 @@ class Cubie:
     def rotateZClockwise(self) -> None:
         self.back, self.right, self.front, self.left = self.left, self.back, self.right, self.front
     
-    def rotateYCounterClockwise(self) -> None:
+    def rotateYClockwise(self) -> None:
         self.top, self.right, self.bot, self.left = self.right, self.bot, self.left, self.top
     
-    def rotateYClockwise(self) -> None:
+    def rotateYCounterClockwise(self) -> None:
         self.top, self.right, self.bot, self.left = self.left, self.top, self.right, self.bot
 
     def sameColorOrientation(self, other):
@@ -53,6 +53,8 @@ class Cubie:
 
 class Cube:
     def __init__(self) -> None:
+
+        # anchor cubie will be UFR
         
         self.cubies = {
             'UFL': Cubie(top='Y', front='B', left='O', goalPosition=[0, 0, 1]),
@@ -95,21 +97,22 @@ class Cube:
         print(f'      +-----+')
         print(f'      | {self.cubies['UBL'].top} {self.cubies['UBR'].top} |')
         print(f'      | {self.cubies['UFL'].top} {self.cubies['UFR'].top} |')
-        print(f'+-----+-----+-----+')
-        print(f'| {self.cubies['UBL'].left} {self.cubies['UFL'].left} | {self.cubies['UFL'].front} {self.cubies['UFR'].front} | {self.cubies['UFR'].right} {self.cubies['UBR'].right} |')
-        print(f'| {self.cubies['DBL'].left} {self.cubies['DFL'].left} | {self.cubies['DFL'].front} {self.cubies['DFR'].front} | {self.cubies['DFR'].right} {self.cubies['DBR'].right} |')
-        print(f'+-----+-----+-----+')
+        print(f'+-----+-----+-----+-----+')
+        print(f'| {self.cubies['UBL'].left} {self.cubies['UFL'].left} | {self.cubies['UFL'].front} {self.cubies['UFR'].front} | {self.cubies['UFR'].right} {self.cubies['UBR'].right} | {self.cubies['UBR'].back} {self.cubies['UBL'].back} |')
+        print(f'| {self.cubies['DBL'].left} {self.cubies['DFL'].left} | {self.cubies['DFL'].front} {self.cubies['DFR'].front} | {self.cubies['DFR'].right} {self.cubies['DBR'].right} | {self.cubies['DBR'].back} {self.cubies['DBL'].back} |')
+        print(f'+-----+-----+-----+-----+')
         print(f'      | {self.cubies['DFL'].bot} {self.cubies['DFR'].bot} |')
         print(f'      | {self.cubies['DBL'].bot} {self.cubies['DBR'].bot} |')
-        print(f'      +-----+')
-        print(f'      | {self.cubies['DBL'].back} {self.cubies['DBR'].back} |')
-        print(f'      | {self.cubies['UBL'].back} {self.cubies['UBR'].back} |')
         print(f'      +-----+')
 
     def isSolved(self) -> None:
         pass
 
+
+
     def __rotateClockwise(self, positions) -> None:
+
+        # 1, 2, 3, 4 = 4, 1, 2, 3 
         
         if len(positions) < 2:
             raise ValueError("You need at least two cubies to swap.")
@@ -123,7 +126,10 @@ class Cube:
 
         self.cubies[positions[0]] = lastElem
 
+
     def __rotateCounterClockwise(self, positions) -> None:
+
+        # 1, 2, 3, 4 = 2, 3, 4, 1
         
         if len(positions) < 2:
             raise ValueError("You need at least two cubies to swap.")
@@ -138,62 +144,80 @@ class Cube:
         self.cubies[positions[-1]] = firstElem
 
 
-    def rotateFrontClockwise(self) -> None:
-        # self.cubies['UFL'], self.cubies['UFR'], self.cubies['DFR'], self.cubies['DFL'] = self.cubies['DFL'], self.cubies['UFL'], self.cubies['UFR'], self.cubies['DFR']
 
-        positions = ['UFL', 'UFR', 'DFR', 'DFL']
+    def __rotateXClosewise(self) -> None:
+        positions = ['UFL', 'UBL', 'DBL', 'DFL']
+        self.__rotateCounterClockwise(positions)
+        for i in positions:
+            self.cubies[i].rotateXCounterClockwise()
+
+    def __rotateXCounterClosewise(self) -> None:
+        positions = ['UFL', 'UBL', 'DBL', 'DFL']
         self.__rotateClockwise(positions)
+        for i in positions:
+            self.cubies[i].rotateXClockwise()
 
-        # temp = [self.cubies['UFR'], self.cubies['DFR'], self.cubies['DFL'], self.cubies['UFL']]
-
+    def __rotateYClosewise(self) -> None:
+        positions = ['UBR', 'UBL', 'DBL', 'DBR']
+        self.__rotateClockwise(positions)
         for i in positions:
             self.cubies[i].rotateYClockwise()
 
+    def __rotateYCounterClosewise(self) -> None:
+        positions = ['UBR', 'UBL', 'DBL', 'DBR']
+        self.__rotateCounterClockwise(positions)
+        for i in positions:
+            self.cubies[i].rotateYCounterClockwise()
+    
+    def __rotateZClosewise(self) -> None:
+        positions = ['DFL', 'DFR', 'DBR', 'DBL']
+        self.__rotateClockwise(positions)
+        for i in positions:
+            self.cubies[i].rotateZCounterClockwise()
+
+    def __rotateZCounterClosewise(self) -> None:
+        positions = ['DFL', 'DFR', 'DBR', 'DBL']
+        self.__rotateCounterClockwise(positions)
+        for i in positions:
+            self.cubies[i].rotateZClockwise()
+
+    
+
+    def rotateFrontClockwise(self) -> None:
+        self.__rotateYClosewise()
 
     def rotateFrontCounterClockwise(self) -> None:
-        # self.cubies['UFL'], self.cubies['UFR'], self.cubies['DFR'], self.cubies['DFL'] = self.cubies['UFR'], self.cubies['DFR'], self.cubies['DFL'], self.cubies['UFL']
-
-        positions = ['UFL', 'UFR', 'DFR', 'DFL']
-        self.__rotateCounterClockwise(positions)
-
-        # temp = [self.cubies['UFL'], self.cubies['UFR'], self.cubies['DFR'], self.cubies['DFL']]
-        for i in positions:
-            self.cubies[i].rotateYCounterClockwise()
+        self.__rotateYCounterClosewise()
 
     def rotateBackClockwise(self) -> None:
-        positions = ['UBL', 'UBR', 'DBR', 'DBL']
-        self.__rotateCounterClockwise(positions)
-
-        for i in positions:
-            self.cubies[i].rotateYCounterClockwise()
-
+        self.__rotateYClosewise()
     
     def rotateBackCounterClockwise(self) -> None:
-        pass
+        self.__rotateYCounterClosewise()
 
     def rotateBottomClockwise(self) -> None:
-        pass
+        self.__rotateZClosewise()
     
     def rotateBottomCounterClockwise(self) -> None:
-        pass
+        self.__rotateZCounterClosewise()
     
     def rotateTopClockwise(self) -> None:
-        pass
+        self.__rotateZClosewise()
     
     def rotateTopCounterClockwise(self) -> None:
-        pass
+        self.__rotateZCounterClosewise()
     
     def rotateLeftClockwise(self) -> None:
-        pass
+        self.__rotateXClosewise()
     
     def rotateLeftCounterClockwise(self) -> None:
-        pass
+        self.__rotateXCounterClosewise()
     
     def rotateRightClockwise(self) -> None:
-        pass
+        self.__rotateXClosewise()
     
     def rotateRightCounterClockwise(self) -> None:
-        pass
+        self.__rotateXCounterClosewise()
 
 
 def main():
@@ -211,38 +235,50 @@ def main():
         print('1: Rotate Front Clockwise')
         print('2: Rotate Front Counterclockwise')
         print('3: Rotate Back Clockwise')
+        print('4: Rotate Back Counterclockwise')
+        print('5: Rotate Top Clockwise')
+        print('6: Rotate Top Counterclockwise')
+        print('7: Rotate Bottom Clockwise')
+        print('8: Rotate Bottom Counterclockwise')
+        print('9: Rotate Left Clockwise')
+        print('10: Rotate Left Counterclockwise')
+        print('11: Rotate Right Clockwise')
+        print('12: Rotate Right Counterclockwise')
 
+        try:
+            operation = int(input('\nSelect: '))
 
-        operation = int(input('\nSelect: '))
-
-        if(operation == 0):
-            break
-        elif(operation == 1): 
-            blocky.rotateFrontClockwise()
-        elif(operation == 2): 
-            blocky.rotateFrontCounterClockwise()
-        elif(operation == 3): 
-            blocky.rotateBackClockwise()
-        elif(operation == 4): 
-            blocky.rotateBackCounterClockwise()
-        elif(operation == 5): 
-            blocky.rotateTopClockwise()
-        elif(operation == 6): 
-            blocky.rotateTopCounterClockwise()
-        elif(operation == 7): 
-            blocky.rotateBottomClockwise()
-        elif(operation == 8): 
-            blocky.rotateBottomCounterClockwise()
-        elif(operation == 9): 
-            blocky.rotateLeftClockwise()
-        elif(operation == 10): 
-            blocky.rotateLeftCounterClockwise()
-        elif(operation == 11): 
-            blocky.rotateRightClockwise()
-        elif(operation == 12): 
-            blocky.rotateRightCounterClockwise()
-        else:
-            print('Invalid Operation.')
+            if operation == 0:
+                print("Exiting program.")
+                break
+            elif operation == 1: 
+                blocky.rotateFrontClockwise()
+            elif operation == 2: 
+                blocky.rotateFrontCounterClockwise()
+            elif operation == 3: 
+                blocky.rotateBackClockwise()
+            elif operation == 4: 
+                blocky.rotateBackCounterClockwise()
+            elif operation == 5: 
+                blocky.rotateTopClockwise()
+            elif operation == 6: 
+                blocky.rotateTopCounterClockwise()
+            elif operation == 7: 
+                blocky.rotateBottomClockwise()
+            elif operation == 8: 
+                blocky.rotateBottomCounterClockwise()
+            elif operation == 9: 
+                blocky.rotateLeftClockwise()
+            elif operation == 10: 
+                blocky.rotateLeftCounterClockwise()
+            elif operation == 11: 
+                blocky.rotateRightClockwise()
+            elif operation == 12: 
+                blocky.rotateRightCounterClockwise()
+            else:
+                print('Invalid Operation.')
+        except ValueError:
+            print("Please enter a valid number.")
         
             
 def cubieTest():
