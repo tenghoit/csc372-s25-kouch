@@ -30,16 +30,23 @@ class Cubie:
 
     def sameColorOrientation(self, other):
         if not isinstance(other, Cubie):
-            return NotImplemented  # Ensure comparison only works with Cubie instances
+            return NotImplemented
 
-        return (
-            self.top == other.top and
-            self.bot == other.bot and
-            self.front == other.front and
-            self.back == other.back and
-            self.left == other.left and
-            self.right == other.right
-        )
+        # Compare all sides, including None
+        for side in ['top', 'bot', 'front', 'back', 'left', 'right']:
+            self_side = getattr(self, side)
+            other_side = getattr(other, side)
+
+            # If one side is None and the other is not, return False
+            if (self_side is None) != (other_side is None):
+                return False
+
+            # If both sides are not None, they must match
+            if self_side is not None and self_side != other_side:
+                return False
+
+        return True  # All sides match
+
 
     def print(self) -> None:
         print(f'    +---+')
@@ -87,7 +94,7 @@ class Cube:
             'UBR': Cubie(top='Y', back='G', right='R', goalPosition=[1, 1, 1]),
             'DFL': Cubie(bot='W', front='B', left='O', goalPosition=[0, 0, 0]),
             'DFR': Cubie(bot='W', front='B', right='R', goalPosition=[1, 0, 0]),
-            'DBL': Cubie(bot='w', back='G', left='O', goalPosition=[0, 1, 0]),
+            'DBL': Cubie(bot='W', back='G', left='O', goalPosition=[0, 1, 0]),
             'DBR': Cubie(bot='W', back='G', right='R', goalPosition=[1, 1, 0])
         }
     
@@ -106,8 +113,22 @@ class Cube:
         print(f'      +-----+')
 
     def isSolved(self) -> None:
-        pass
+        solvedCube = {
+            'UFL': Cubie(top='Y', front='B', left='O', goalPosition=[0, 0, 1]),
+            'UFR': Cubie(top='Y', front='B', right='R', goalPosition=[1, 0, 1]),
+            'UBL': Cubie(top='Y', back='G', left='O', goalPosition=[0, 1, 1]),
+            'UBR': Cubie(top='Y', back='G', right='R', goalPosition=[1, 1, 1]),
+            'DFL': Cubie(bot='W', front='B', left='O', goalPosition=[0, 0, 0]),
+            'DFR': Cubie(bot='W', front='B', right='R', goalPosition=[1, 0, 0]),
+            'DBL': Cubie(bot='W', back='G', left='O', goalPosition=[0, 1, 0]),
+            'DBR': Cubie(bot='W', back='G', right='R', goalPosition=[1, 1, 0])
+        }
 
+        for key in solvedCube.keys():
+            if(self.cubies[key].sameColorOrientation(solvedCube[key]) == False):
+                return False
+
+        return True
 
 
     def __rotateClockwise(self, positions) -> None:
@@ -244,6 +265,7 @@ def main():
         print('10: Rotate Left Counterclockwise')
         print('11: Rotate Right Clockwise')
         print('12: Rotate Right Counterclockwise')
+        print('13: Check isSolved')
 
         try:
             operation = int(input('\nSelect: '))
@@ -275,6 +297,8 @@ def main():
                 blocky.rotateRightClockwise()
             elif operation == 12: 
                 blocky.rotateRightCounterClockwise()
+            elif operation == 13: 
+                print(blocky.isSolved())
             else:
                 print('Invalid Operation.')
         except ValueError:
@@ -299,6 +323,10 @@ def cubieTest():
     sam.print()
     sam.rotateZCounterClockwise()
     sam.print()
+
+    lad = Cubie(top='Y', bot='W', front='B', back='G', left='O')
+
+    print(sam.sameColorOrientation(lad))
 
 
 if (__name__ == '__main__'):
