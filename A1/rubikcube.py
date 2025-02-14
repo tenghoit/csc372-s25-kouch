@@ -32,20 +32,19 @@ class Cubie:
         if not isinstance(other, Cubie):
             return NotImplemented
 
-        # Compare all sides, including None
         for side in ['top', 'bot', 'front', 'back', 'left', 'right']:
             self_side = getattr(self, side)
             other_side = getattr(other, side)
 
-            # If one side is None and the other is not, return False
+            # ensure both side are None or not None
             if (self_side is None) != (other_side is None):
                 return False
 
-            # If both sides are not None, they must match
+            # If not None, then must match
             if self_side is not None and self_side != other_side:
                 return False
 
-        return True  # All sides match
+        return True
 
 
     def print(self) -> None:
@@ -59,6 +58,18 @@ class Cubie:
 
 
 class Cube:
+
+    solvedCube = {
+        'UFL': Cubie(top='Y', front='B', left='O', goalPosition=[0, 0, 1]),
+        'UFR': Cubie(top='Y', front='B', right='R', goalPosition=[1, 0, 1]),
+        'UBL': Cubie(top='Y', back='G', left='O', goalPosition=[0, 1, 1]),
+        'UBR': Cubie(top='Y', back='G', right='R', goalPosition=[1, 1, 1]),
+        'DFL': Cubie(bot='W', front='B', left='O', goalPosition=[0, 0, 0]),
+        'DFR': Cubie(bot='W', front='B', right='R', goalPosition=[1, 0, 0]),
+        'DBL': Cubie(bot='W', back='G', left='O', goalPosition=[0, 1, 0]),
+        'DBR': Cubie(bot='W', back='G', right='R', goalPosition=[1, 1, 0])
+    }
+
     def __init__(self) -> None:
 
         # anchor cubie will be UFR
@@ -113,16 +124,6 @@ class Cube:
         print(f'      +-----+')
 
     def isSolved(self) -> None:
-        solvedCube = {
-            'UFL': Cubie(top='Y', front='B', left='O', goalPosition=[0, 0, 1]),
-            'UFR': Cubie(top='Y', front='B', right='R', goalPosition=[1, 0, 1]),
-            'UBL': Cubie(top='Y', back='G', left='O', goalPosition=[0, 1, 1]),
-            'UBR': Cubie(top='Y', back='G', right='R', goalPosition=[1, 1, 1]),
-            'DFL': Cubie(bot='W', front='B', left='O', goalPosition=[0, 0, 0]),
-            'DFR': Cubie(bot='W', front='B', right='R', goalPosition=[1, 0, 0]),
-            'DBL': Cubie(bot='W', back='G', left='O', goalPosition=[0, 1, 0]),
-            'DBR': Cubie(bot='W', back='G', right='R', goalPosition=[1, 1, 0])
-        }
 
         for key in solvedCube.keys():
             if(self.cubies[key].sameColorOrientation(solvedCube[key]) == False):
