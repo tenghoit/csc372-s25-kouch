@@ -329,6 +329,23 @@ def cubieTest():
 
     print(sam.sameColorOrientation(lad))
 
+class Node:
+    def __init__(self, parent, state, action) -> None:
+        self.parent: Cube = parent
+        self.state: Cube = state
+        self.action = action
+        
+
+class Solution:
+
+    def __init__(self, root) -> None:
+        self.root = Node(parent=None, state=root, action=None)
+
+    
+
+
+
+
 
 if (__name__ == '__main__'):
     main()
