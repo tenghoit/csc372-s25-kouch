@@ -337,9 +337,16 @@ class Node:
         
 
 class Solution:
+    rotations = ['D', 'D', 'L', 'L', 'B', 'B']
 
     def __init__(self, root) -> None:
         self.root = Node(parent=None, state=root, action=None)
+        self.explored = []
+        self.frontier = []
+        
+
+    def breadthFirstSearch(self):
+        pass
 
     
 
