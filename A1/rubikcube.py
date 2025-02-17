@@ -331,9 +331,22 @@ def cubieTest():
 
 class Node:
     def __init__(self, parent, state, action) -> None:
-        self.parent: Cube = parent
+        self.parent: Node = parent
         self.state: Cube = state
         self.action = action
+
+    def actionSequence(self):
+
+        sequence = []
+        currentNode = self
+        
+        while currentNode.parent is not None:
+
+            sequence.append(currentNode.action)
+
+            currentNode = currentNode.parent
+
+        return sequence.reverse()
         
 
 class Solution:
@@ -346,7 +359,13 @@ class Solution:
         
 
     def breadthFirstSearch(self):
-        pass
+        
+        
+        while len(self.frontier) != 0:
+
+            currentNode = self.frontier.pop(0)
+
+
 
     
 
