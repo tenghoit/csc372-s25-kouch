@@ -1,6 +1,10 @@
 
 
 class Cubie:
+    goalPositions = {
+
+    }
+
     def __init__(self, top=None, bot=None, front=None, back=None, left=None, right=None, goalPosition: list[int]=None) -> None:
         self.top = top
         self.bot = bot
@@ -55,6 +59,16 @@ class Cubie:
         print(f'+---+---+---+---+')
         print(f'    | {self.bot} |')
         print(f'    +---+')
+
+    def clone(self) -> Cubie:
+        return Cubie(
+            top = self.top,
+            bot = self.bot,
+            front = self.front,
+            back = self.back,
+            left = self.left,
+            right = self.right,
+        )
 
 
 class Cube:
@@ -347,6 +361,20 @@ class Node:
             currentNode = currentNode.parent
 
         return sequence.reverse()
+
+    def getPathCost(self) -> int:
+        
+        pathCost = 0
+        currentNode = self
+
+        while currentNode.parent is not None:
+
+            pathCost += 1
+
+            currentNode = currentNode.parent
+
+        return pathCost
+
         
 
 class Solution:
