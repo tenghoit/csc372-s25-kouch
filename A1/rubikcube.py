@@ -64,9 +64,9 @@ class Cubie:
         print(f'    | {self.bot} |')
         print(f'    +---+')
 
-    def clone(self) -> Cubie:
+    def clone(self) -> 'Cubie':
         """
-        Generate new deep copy of cubie 
+        Return a new deep copy of cubie 
         """
         return Cubie(
             top = self.top,
@@ -127,8 +127,8 @@ class Cube:
         """
         Reset cube back to solved state.
         """
-        for key in solvedCube.keys():
-            self.cubies[key] = solvedCube[key].clone()
+        for key in Cube.solvedCube.keys():
+            self.cubies[key] = Cube.solvedCube[key].clone()
     
 
     def print(self) -> None:
@@ -145,9 +145,12 @@ class Cube:
         print(f'      +-----+')
 
     def isSolved(self) -> bool:
+        """
+        Check if cube is in a solved state
+        """
 
-        for key in solvedCube.keys():
-            if(self.cubies[key].sameColorOrientation(solvedCube[key]) == False):
+        for key in Cube.solvedCube.keys():
+            if(self.cubies[key].sameColorOrientation(Cube.solvedCube[key]) == False):
                 return False
 
         return True
@@ -164,7 +167,7 @@ class Cube:
         for key in self.cubies.keys():
 
             goalPosition = self.cubies[key].goalPosition
-            currentPosition = positions[key]
+            currentPosition = Cube.positions[key]
 
             manhattanDist = 0
 
@@ -178,8 +181,10 @@ class Cube:
 
 
     def __rotateClockwise(self, positions) -> None:
-
-        # 1, 2, 3, 4 = 4, 1, 2, 3 
+        """
+        A Private function that rotate faces clockwise. 
+        ie 1, 2, 3, 4 = 4, 1, 2, 3 
+        """
         
         if len(positions) < 2:
             raise ValueError("You need at least two cubies to swap.")
@@ -195,8 +200,10 @@ class Cube:
 
 
     def __rotateCounterClockwise(self, positions) -> None:
-
-        # 1, 2, 3, 4 = 2, 3, 4, 1
+        """
+        A Private function that rotate faces counter clockwise. 
+        ie 1, 2, 3, 4 = 2, 3, 4, 1
+        """
         
         if len(positions) < 2:
             raise ValueError("You need at least two cubies to swap.")
