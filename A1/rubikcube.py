@@ -1,9 +1,9 @@
 
 
 class Cubie:
-    goalPositions = {
-
-    }
+    """
+    Represent a single cubie with 6 sides.
+    """
 
     def __init__(self, top=None, bot=None, front=None, back=None, left=None, right=None, goalPosition: list[int]=None) -> None:
         self.top = top
@@ -32,7 +32,11 @@ class Cubie:
     def rotateYCounterClockwise(self) -> None:
         self.top, self.right, self.bot, self.left = self.left, self.top, self.right, self.bot
 
-    def sameColorOrientation(self, other):
+    def sameColorOrientation(self, other) -> bool:
+        """
+        Compare if two cubie has the same color orientation.
+        """
+
         if not isinstance(other, Cubie):
             return NotImplemented
 
@@ -61,6 +65,9 @@ class Cubie:
         print(f'    +---+')
 
     def clone(self) -> Cubie:
+        """
+        Generate new deep copy of cubie 
+        """
         return Cubie(
             top = self.top,
             bot = self.bot,
@@ -68,10 +75,14 @@ class Cubie:
             back = self.back,
             left = self.left,
             right = self.right,
+            goalPosition=self.goalPosition
         )
 
 
 class Cube:
+    """
+    Represent a Cube that is maded up of cubies.
+    """
 
     solvedCube = {
         'UFL': Cubie(top='Y', front='B', left='O', goalPosition=[0, 0, 1]),
@@ -82,6 +93,18 @@ class Cube:
         'DFR': Cubie(bot='W', front='B', right='R', goalPosition=[1, 0, 0]),
         'DBL': Cubie(bot='W', back='G', left='O', goalPosition=[0, 1, 0]),
         'DBR': Cubie(bot='W', back='G', right='R', goalPosition=[1, 1, 0])
+    }
+    
+    # xyz cords of corner cubies
+    positions = {
+        'UFL': [0, 0, 1],
+        'UFR': [1, 0, 1],
+        'UBL': [0, 1, 1],
+        'UBR': [1, 1, 1],
+        'DFL': [0, 0, 0],
+        'DFR': [1, 0, 0],
+        'DBL': [0, 1, 0],
+        'DBR': [1, 1, 0]
     }
 
     def __init__(self) -> None:
@@ -99,29 +122,13 @@ class Cube:
             'DBR': Cubie(bot='W', back='G', right='R', goalPosition=[1, 1, 0])
         }
 
-        # xyz cords of corner cubies
-        self.positions = {
-            'UFL': [0, 0, 1],
-            'UFR': [1, 0, 1],
-            'UBL': [0, 1, 1],
-            'UBR': [1, 1, 1],
-            'DFL': [0, 0, 0],
-            'DFR': [1, 0, 0],
-            'DBL': [0, 1, 0],
-            'DBR': [1, 1, 0]
-        }
 
     def reset(self) -> None:
-        self.cubies = {
-            'UFL': Cubie(top='Y', front='B', left='O', goalPosition=[0, 0, 1]),
-            'UFR': Cubie(top='Y', front='B', right='R', goalPosition=[1, 0, 1]),
-            'UBL': Cubie(top='Y', back='G', left='O', goalPosition=[0, 1, 1]),
-            'UBR': Cubie(top='Y', back='G', right='R', goalPosition=[1, 1, 1]),
-            'DFL': Cubie(bot='W', front='B', left='O', goalPosition=[0, 0, 0]),
-            'DFR': Cubie(bot='W', front='B', right='R', goalPosition=[1, 0, 0]),
-            'DBL': Cubie(bot='W', back='G', left='O', goalPosition=[0, 1, 0]),
-            'DBR': Cubie(bot='W', back='G', right='R', goalPosition=[1, 1, 0])
-        }
+        """
+        Reset cube back to solved state.
+        """
+        for key in solvedCube.keys():
+            self.cubies[key] = solvedCube[key].clone()
     
 
     def print(self) -> None:
@@ -137,13 +144,37 @@ class Cube:
         print(f'      | {self.cubies['DBL'].bot} {self.cubies['DBR'].bot} |')
         print(f'      +-----+')
 
-    def isSolved(self) -> None:
+    def isSolved(self) -> bool:
 
         for key in solvedCube.keys():
             if(self.cubies[key].sameColorOrientation(solvedCube[key]) == False):
                 return False
 
         return True
+
+    def getHeuristicScore(self) -> int:
+        """
+        Returns heuristic score of the current state. Combination of:
+            * manhattan dist between current position and goal position of each cubie
+            * color orientation
+        """
+
+        totalScore = 0
+
+        for key in self.cubies.keys():
+
+            goalPosition = self.cubies[key].goalPosition
+            currentPosition = positions[key]
+
+            manhattanDist = 0
+
+            for i in range(3):
+                manhattanDist += abs( goalPosition[i] - currentPosition[i] )
+
+
+
+            totalScore += manhattanDist
+
 
 
     def __rotateClockwise(self, positions) -> None:
@@ -349,7 +380,10 @@ class Node:
         self.state: Cube = state
         self.action = action
 
-    def actionSequence(self):
+    def getActionSequence(self):
+        """
+        Returns action sequence for a given state
+        """
 
         sequence = []
         currentNode = self
@@ -363,7 +397,9 @@ class Node:
         return sequence.reverse()
 
     def getPathCost(self) -> int:
-        
+        """
+        Returns path cost for a given state
+        """
         pathCost = 0
         currentNode = self
 
