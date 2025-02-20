@@ -1,3 +1,4 @@
+import heapq
 
 
 class Cubie:
@@ -294,6 +295,103 @@ class Cube:
         self.__rotateXCounterClosewise()
 
 
+   
+            
+def cubieTest():
+    sam = Cubie(top='Y', bot='W', front='B', back='G', left='O', right='R')
+    sam.print()
+
+    sam.rotateYClockwise()
+    sam.print()
+    sam.rotateYCounterClockwise()
+    sam.print()
+
+    sam.rotateXClockwise()
+    sam.print()
+    sam.rotateXCounterClockwise()
+    sam.print()
+
+    sam.rotateZClockwise()
+    sam.print()
+    sam.rotateZCounterClockwise()
+    sam.print()
+
+    lad = Cubie(top='Y', bot='W', front='B', back='G', left='O')
+
+    print(sam.sameColorOrientation(lad))
+
+class Node:
+    def __init__(self, parent, state, action) -> None:
+        self.parent: Node = parent
+        self.state: Cube = state
+        self.action = action
+
+    def getActionSequence(self):
+        """
+        Returns action sequence for a given state
+        """
+
+        sequence = []
+        currentNode = self
+        
+        while currentNode.parent is not None:
+
+            sequence.append(currentNode.action)
+
+            currentNode = currentNode.parent
+
+        return sequence.reverse()
+
+    def getPathCost(self) -> int:
+        """
+        Returns path cost for a given state
+        """
+        pathCost = 0
+        currentNode = self
+
+        while currentNode.parent is not None:
+
+            pathCost += 1
+
+            currentNode = currentNode.parent
+
+        return pathCost
+
+class PriorityQueue:
+    """
+    Priority queue using a heap
+    """
+    def __init__(self) -> None:
+        self.queue = []
+
+    def isEmpty(self) -> bool:
+        if len(self.queue) == 0:
+            return True
+        
+        return False
+        
+
+class Solution:
+    rotations = ['D', 'D', 'L', 'L', 'B', 'B']
+
+    def __init__(self, root) -> None:
+        self.root = Node(parent=None, state=root, action=None)
+        self.explored = []
+        self.frontier = []
+        
+
+    def breadthFirstSearch(self):
+        
+        
+        while len(self.frontier) != 0:
+
+            currentNode = self.frontier.pop(0)
+
+
+
+    
+
+
 def main():
 
     print('\n2x2 Rubik\'s cube')
@@ -356,92 +454,6 @@ def main():
                 print('Invalid Operation.')
         except ValueError:
             print("Please enter a valid number.")
-        
-            
-def cubieTest():
-    sam = Cubie(top='Y', bot='W', front='B', back='G', left='O', right='R')
-    sam.print()
-
-    sam.rotateYClockwise()
-    sam.print()
-    sam.rotateYCounterClockwise()
-    sam.print()
-
-    sam.rotateXClockwise()
-    sam.print()
-    sam.rotateXCounterClockwise()
-    sam.print()
-
-    sam.rotateZClockwise()
-    sam.print()
-    sam.rotateZCounterClockwise()
-    sam.print()
-
-    lad = Cubie(top='Y', bot='W', front='B', back='G', left='O')
-
-    print(sam.sameColorOrientation(lad))
-
-class Node:
-    def __init__(self, parent, state, action) -> None:
-        self.parent: Node = parent
-        self.state: Cube = state
-        self.action = action
-
-    def getActionSequence(self):
-        """
-        Returns action sequence for a given state
-        """
-
-        sequence = []
-        currentNode = self
-        
-        while currentNode.parent is not None:
-
-            sequence.append(currentNode.action)
-
-            currentNode = currentNode.parent
-
-        return sequence.reverse()
-
-    def getPathCost(self) -> int:
-        """
-        Returns path cost for a given state
-        """
-        pathCost = 0
-        currentNode = self
-
-        while currentNode.parent is not None:
-
-            pathCost += 1
-
-            currentNode = currentNode.parent
-
-        return pathCost
-
-        
-
-class Solution:
-    rotations = ['D', 'D', 'L', 'L', 'B', 'B']
-
-    def __init__(self, root) -> None:
-        self.root = Node(parent=None, state=root, action=None)
-        self.explored = []
-        self.frontier = []
-        
-
-    def breadthFirstSearch(self):
-        
-        
-        while len(self.frontier) != 0:
-
-            currentNode = self.frontier.pop(0)
-
-
-
-    
-
-
-
 
 
 if (__name__ == '__main__'):
