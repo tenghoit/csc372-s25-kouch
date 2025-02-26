@@ -6,34 +6,34 @@ class Cubie:
     Represent a single cubie with 6 sides.
     """
 
-    def __init__(self, top=None, bot=None, front=None, back=None, left=None, right=None, goalPosition: list[int]=None) -> None:
+    def __init__(self, top=None, bot=None, front=None, back=None, left=None, right=None, goal_position: list[int]=None) -> None:
         self.top = top
         self.bot = bot
         self.front = front
         self.back = back
         self.left = left
         self.right = right
-        self.goalPosition: list[int] = goalPosition
+        self.goal_position: list[int] = goal_position
 
-    def rotateXCounterClockwise(self) -> None:
+    def rotate_right_counter_clockwise(self) -> None:
         self.top, self.back, self.bot, self.front = self.back, self.bot, self.front, self.top
     
-    def rotateXClockwise(self) -> None:
+    def rotate_right_clockwise(self) -> None:
         self.top, self.back, self.bot, self.front = self.front, self.top, self.back, self.bot
     
-    def rotateZCounterClockwise(self) -> None:
+    def rotate_top_counter_clockwise(self) -> None:
         self.back, self.right, self.front, self.left = self.right, self.front, self.left, self.back
     
-    def rotateZClockwise(self) -> None:
+    def rotate_top_clockwise(self) -> None:
         self.back, self.right, self.front, self.left = self.left, self.back, self.right, self.front
     
-    def rotateYClockwise(self) -> None:
+    def rotate_front_counter_clockwise(self) -> None:
         self.top, self.right, self.bot, self.left = self.right, self.bot, self.left, self.top
     
-    def rotateYCounterClockwise(self) -> None:
+    def rotate_front_clockwise(self) -> None:
         self.top, self.right, self.bot, self.left = self.left, self.top, self.right, self.bot
 
-    def sameColorOrientation(self, other) -> bool:
+    def same_color_orientation(self, other) -> bool:
         """
         Compare if two cubie has the same color orientation.
         """
@@ -76,7 +76,7 @@ class Cubie:
             back = self.back,
             left = self.left,
             right = self.right,
-            goalPosition=self.goalPosition
+            goal_position = self.goal_position
         )
 
 
@@ -85,15 +85,15 @@ class Cube:
     Represent a Cube that is maded up of cubies.
     """
 
-    solvedCube = {
-        'UFL': Cubie(top='Y', front='B', left='O', goalPosition=[0, 0, 1]),
-        'UFR': Cubie(top='Y', front='B', right='R', goalPosition=[1, 0, 1]),
-        'UBL': Cubie(top='Y', back='G', left='O', goalPosition=[0, 1, 1]),
-        'UBR': Cubie(top='Y', back='G', right='R', goalPosition=[1, 1, 1]),
-        'DFL': Cubie(bot='W', front='B', left='O', goalPosition=[0, 0, 0]),
-        'DFR': Cubie(bot='W', front='B', right='R', goalPosition=[1, 0, 0]),
-        'DBL': Cubie(bot='W', back='G', left='O', goalPosition=[0, 1, 0]),
-        'DBR': Cubie(bot='W', back='G', right='R', goalPosition=[1, 1, 0])
+    solved_cube = {
+        'UFL': Cubie(top='Y', front='B', left='O', goal_position=[0, 0, 1]),
+        'UFR': Cubie(top='Y', front='B', right='R', goal_position=[1, 0, 1]),
+        'UBL': Cubie(top='Y', back='G', left='O', goal_position=[0, 1, 1]),
+        'UBR': Cubie(top='Y', back='G', right='R', goal_position=[1, 1, 1]),
+        'DFL': Cubie(bot='W', front='B', left='O', goal_position=[0, 0, 0]),
+        'DFR': Cubie(bot='W', front='B', right='R', goal_position=[1, 0, 0]),
+        'DBL': Cubie(bot='W', back='G', left='O', goal_position=[0, 1, 0]),
+        'DBR': Cubie(bot='W', back='G', right='R', goal_position=[1, 1, 0])
     }
     
     # xyz cords of corner cubies
@@ -110,39 +110,60 @@ class Cube:
 
     def __init__(self) -> None:
 
-        # anchor cubie will be UFR
+        # anchor cubie will be DBL
         
         self.cubies = {
-            'UFL': Cubie(top='Y', front='B', left='O', goalPosition=[0, 0, 1]),
-            'UFR': Cubie(top='Y', front='B', right='R', goalPosition=[1, 0, 1]),
-            'UBL': Cubie(top='Y', back='G', left='O', goalPosition=[0, 1, 1]),
-            'UBR': Cubie(top='Y', back='G', right='R', goalPosition=[1, 1, 1]),
-            'DFL': Cubie(bot='W', front='B', left='O', goalPosition=[0, 0, 0]),
-            'DFR': Cubie(bot='W', front='B', right='R', goalPosition=[1, 0, 0]),
-            'DBL': Cubie(bot='W', back='G', left='O', goalPosition=[0, 1, 0]),
-            'DBR': Cubie(bot='W', back='G', right='R', goalPosition=[1, 1, 0])
+            'UFL': Cubie(top='Y', front='B', left='O', goal_position=[0, 0, 1]),
+            'UFR': Cubie(top='Y', front='B', right='R', goal_position=[1, 0, 1]),
+            'UBL': Cubie(top='Y', back='G', left='O', goal_position=[0, 1, 1]),
+            'UBR': Cubie(top='Y', back='G', right='R', goal_position=[1, 1, 1]),
+            'DFL': Cubie(bot='W', front='B', left='O', goal_position=[0, 0, 0]),
+            'DFR': Cubie(bot='W', front='B', right='R', goal_position=[1, 0, 0]),
+            'DBL': Cubie(bot='W', back='G', left='O', goal_position=[0, 1, 0]),
+            'DBR': Cubie(bot='W', back='G', right='R', goal_position=[1, 1, 0])
         }
+
+        self.UFL = Cubie(top='Y', front='B', left='O', goal_position=[0, 0, 1])
+        self.UFR = Cubie(top='Y', front='B', right='R', goal_position=[1, 0, 1])
+        self.UBL = Cubie(top='Y', back='G', left='O', goal_position=[0, 1, 1])
+        self.UBR = Cubie(top='Y', back='G', right='R', goal_position=[1, 1, 1])
+        self.DFL = Cubie(bot='W', front='B', left='O', goal_position=[0, 0, 0])
+        self.DFR = Cubie(bot='W', front='B', right='R', goal_position=[1, 0, 0])
+        self.DBL = Cubie(bot='W', back='G', left='O', goal_position=[0, 1, 0])
+        self.DBR = Cubie(bot='W', back='G', right='R', goal_position=[1, 1, 0])
+
 
 
     def reset(self) -> None:
         """
         Reset cube back to solved state.
         """
-        for key in Cube.solvedCube.keys():
-            self.cubies[key] = Cube.solvedCube[key].clone()
+        for key in Cube.solved_cube.keys():
+            setattr(self, key, Cube.solved_cube[key].clone())
     
 
     def print(self) -> None:
 
+        # print(f'      +-----+')
+        # print(f'      | {self.cubies['UBL'].top} {self.cubies['UBR'].top} |')
+        # print(f'      | {self.cubies['UFL'].top} {self.cubies['UFR'].top} |')
+        # print(f'+-----+-----+-----+-----+')
+        # print(f'| {self.cubies['UBL'].left} {self.cubies['UFL'].left} | {self.cubies['UFL'].front} {self.cubies['UFR'].front} | {self.cubies['UFR'].right} {self.cubies['UBR'].right} | {self.cubies['UBR'].back} {self.cubies['UBL'].back} |')
+        # print(f'| {self.cubies['DBL'].left} {self.cubies['DFL'].left} | {self.cubies['DFL'].front} {self.cubies['DFR'].front} | {self.cubies['DFR'].right} {self.cubies['DBR'].right} | {self.cubies['DBR'].back} {self.cubies['DBL'].back} |')
+        # print(f'+-----+-----+-----+-----+')
+        # print(f'      | {self.cubies['DFL'].bot} {self.cubies['DFR'].bot} |')
+        # print(f'      | {self.cubies['DBL'].bot} {self.cubies['DBR'].bot} |')
+        # print(f'      +-----+')
+
         print(f'      +-----+')
-        print(f'      | {self.cubies['UBL'].top} {self.cubies['UBR'].top} |')
-        print(f'      | {self.cubies['UFL'].top} {self.cubies['UFR'].top} |')
+        print(f'      | {self.UBL.top} {self.UBR.top} |')
+        print(f'      | {self.UFL.top} {self.UFR.top} |')
         print(f'+-----+-----+-----+-----+')
-        print(f'| {self.cubies['UBL'].left} {self.cubies['UFL'].left} | {self.cubies['UFL'].front} {self.cubies['UFR'].front} | {self.cubies['UFR'].right} {self.cubies['UBR'].right} | {self.cubies['UBR'].back} {self.cubies['UBL'].back} |')
-        print(f'| {self.cubies['DBL'].left} {self.cubies['DFL'].left} | {self.cubies['DFL'].front} {self.cubies['DFR'].front} | {self.cubies['DFR'].right} {self.cubies['DBR'].right} | {self.cubies['DBR'].back} {self.cubies['DBL'].back} |')
+        print(f'| {self.UBL.left} {self.UFL.left} | {self.UFL.front} {self.UFR.front} | {self.UFR.right} {self.UBR.right} | {self.UBR.back} {self.UBL.back} |')
+        print(f'| {self.DBL.left} {self.DFL.left} | {self.DFL.front} {self.DFR.front} | {self.DFR.right} {self.DBR.right} | {self.DBR.back} {self.DBL.back} |')
         print(f'+-----+-----+-----+-----+')
-        print(f'      | {self.cubies['DFL'].bot} {self.cubies['DFR'].bot} |')
-        print(f'      | {self.cubies['DBL'].bot} {self.cubies['DBR'].bot} |')
+        print(f'      | {self.DFL.bot} {self.DFR.bot} |')
+        print(f'      | {self.DBL.bot} {self.DBR.bot} |')
         print(f'      +-----+')
 
     def isSolved(self) -> bool:
@@ -150,8 +171,8 @@ class Cube:
         Check if cube is in a solved state
         """
 
-        for key in Cube.solvedCube.keys():
-            if(self.cubies[key].sameColorOrientation(Cube.solvedCube[key]) == False):
+        for key in Cube.solved_cube.keys():
+            if(getattr(self, key).same_color_orientation(Cube.solved_cube[key]) == False):
                 return False
 
         return True
@@ -167,13 +188,13 @@ class Cube:
 
         for key in self.cubies.keys():
 
-            goalPosition = self.cubies[key].goalPosition
+            goal_position = self.cubies[key].goal_position
             currentPosition = Cube.positions[key]
 
             manhattanDist = 0
 
             for i in range(3):
-                manhattanDist += abs( goalPosition[i] - currentPosition[i] )
+                manhattanDist += abs( goal_position[i] - currentPosition[i] )
 
 
 
@@ -318,7 +339,7 @@ def cubieTest():
 
     lad = Cubie(top='Y', bot='W', front='B', back='G', left='O')
 
-    print(sam.sameColorOrientation(lad))
+    print(sam.same_color_orientation(lad))
 
 class Node:
     def __init__(self, parent, state, action) -> None:
