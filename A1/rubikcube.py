@@ -166,7 +166,7 @@ class Cube:
         print(f'      | {self.DBL.bot} {self.DBR.bot} |')
         print(f'      +-----+')
 
-    def isSolved(self) -> bool:
+    def is_solved(self) -> bool:
         """
         Check if cube is in a solved state
         """
@@ -199,6 +199,41 @@ class Cube:
 
 
             totalScore += manhattanDist
+
+
+    def rotate_front_clockwise(self) -> None:
+        positions = [self.UFL, self.UFR, self.DFR, self.DFL]
+
+        self.UFL, self.UFR, self.DFR, self.DFL = self.DFL, self.UFL, self.UFR, self.DFR
+
+        for position in positions:
+            position.rotate_front_clockwise()
+
+    
+    def rotate_front_counter_clockwise(self) -> None:
+        positions = [self.UFL, self.UFR, self.DFR, self.DFL]
+
+        self.UFL, self.UFR, self.DFR, self.DFL = self.UFR, self.DFR, self.DFL, self.UFL
+
+        for position in positions:
+            position.rotate_front_counter_clockwise()
+
+
+    def rotate_top_clockwise(self) -> None:
+        positions = [self.UBL, self.UBR, self.UFR, self.UFL]
+
+        self.UBL, self.UBR, self.UFR, self.UFL = self.UFL, self.UBL, self.UBR, self.UFR
+
+        for position in positions:
+            position.rotate_top_clockwise()
+
+    def rotate_top_counter_clockwise(self) -> None:
+        positions = [self.UBL, self.UBR, self.UFR, self.UFL]
+
+        self.UBL, self.UBR, self.UFR, self.UFL = self.UBR, self.UFR, self.UFL, self.UBL
+
+        for position in positions:
+            position.rotate_top_counter_clockwise()
 
 
 
