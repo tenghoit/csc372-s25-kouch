@@ -95,7 +95,7 @@ def main():
 
     solution = Solution(blocky)
 
-    result = solution.breadthFirstSearch()
+    # result = solution.breadthFirstSearch()
 
     print(result)
 

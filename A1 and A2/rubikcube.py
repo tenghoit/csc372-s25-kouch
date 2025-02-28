@@ -114,8 +114,7 @@ class Cube:
         "T": "T'",
         "T'": "T",
         "R": "R'",
-        "R'": "R",
-        "": ""
+        "R'": "R"
     }
 
     
@@ -300,7 +299,16 @@ class Cube:
 
     def randomize(self, num_moves: int) -> None:
 
-        last_move = ''
+        if num_moves < 1: return
+
+        # initial turn
+        move = random.choice(list(Cube.moves.keys()))
+        method_name = Cube.moves[move]
+        method = getattr(self, method_name)
+        num_moves -= 1
+        method()
+
+        last_move = move
 
         while num_moves > 0:
 
@@ -325,27 +333,49 @@ def cubieTest():
     sam = Cubie(top='Y', bot='W', front='B', back='G', left='O', right='R')
     sam.print()
 
-    sam.rotateYClockwise()
+    lad = Cubie(top='Y', bot='W', front='B', back='G', left='O', right='R')
+    print(sam.same_color_orientation(lad))
+    bad = sam.clone()
+    print(sam.same_color_orientation(bad))
+    
+
+
+    sam.rotate_front_clockwise()
     sam.print()
-    sam.rotateYCounterClockwise()
+    sam.rotate_front_counter_clockwise()
     sam.print()
 
-    sam.rotateXClockwise()
+    sam.rotate_top_clockwise()
     sam.print()
-    sam.rotateXCounterClockwise()
+    sam.rotate_top_counter_clockwise()
     sam.print()
 
-    sam.rotateZClockwise()
+    sam.rotate_right_clockwise()
     sam.print()
-    sam.rotateZCounterClockwise()
+    sam.rotate_right_counter_clockwise()
     sam.print()
 
     lad = Cubie(top='Y', bot='W', front='B', back='G', left='O')
 
-    print(sam.same_color_orientation(lad))
 
 
-def main():
+def cubeTest():
+    blocky = Cube()
+    blocky.print()
+
+    alice = blocky.clone()
+    alice.rotate_front_clockwise()
+
+    blocky.print()
+    alice.print()
+
+    blocky.randomize(5)
+    blocky.print()
+
+
+
+
+def interface():
 
     print('\n2x2 Rubik\'s cube')
     blocky = Cube()
@@ -396,4 +426,5 @@ def main():
 
 
 if (__name__ == '__main__'):
-    main()
+    cubieTest()
+    cubeTest()
