@@ -20,7 +20,9 @@ class Node:
 
             currentNode = currentNode.parent
 
-        return sequence.reverse()
+        sequence.reverse()
+        return sequence
+
 
     def getPathCost(self) -> int:
         """
@@ -54,20 +56,23 @@ class PriorityQueue:
 
 class Solution:
 
-    def __init__(self, state) -> None:
+    def __init__(self, state: Cube) -> None:
         self.root = Node(parent=None, state=state, action=None)
         self.explored = [self.root]
         self.frontier = []
+
+
+    def breadthFirstSearch(self) -> list[str]:
 
         # start initial frontier
         for move in Cube.moves.keys(): 
             new_state = self.root.state.turn_and_clone(move)
             self.frontier.append(Node(self.root, new_state, move))
-        
 
-    def breadthFirstSearch(self) -> list[str]:
         
         while len(self.frontier) != 0:
+
+            print(f'Explored: {len(self.explored)} | Frontier: {len(self.frontier)}')
 
             currentNode = self.frontier.pop(0)
 
@@ -90,12 +95,12 @@ class Solution:
 def main():
     blocky = Cube()
     blocky.print()
-    blocky.randomize(5)
+    blocky.randomize(4)
     blocky.print()
 
     solution = Solution(blocky)
 
-    # result = solution.breadthFirstSearch()
+    result = solution.breadthFirstSearch()
 
     print(result)
 

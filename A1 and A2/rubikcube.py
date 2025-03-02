@@ -308,6 +308,8 @@ class Cube:
         num_moves -= 1
         method()
 
+        print(move)
+
         last_move = move
 
         while num_moves > 0:
