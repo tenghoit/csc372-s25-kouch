@@ -152,7 +152,7 @@ class Solution:
 def main():
     blocky = Cube()
     blocky.print()
-    sequence = blocky.randomize(6)
+    sequence = blocky.randomize(8)
     print(sequence)
     blocky.print()
 

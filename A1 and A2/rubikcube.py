@@ -191,6 +191,25 @@ class Cube:
         print(f'      | {self.DBL.bot} {self.DBR.bot} |')
         print(f'      +-----+')
 
+    def __hash__(self):
+        return hash((
+            self.UBL.top, self.UBR.top,
+            self.UFL.top, self.UFR.top,
+
+            self.UBL.left, self.UFL.left,
+            self.UFL.front, self.UFR.front,
+            self.UFR.right, self.UBR.right,
+            self.UBR.back, self.UBL.back,
+
+            self.DBL.left, self.DFL.left,
+            self.DFL.front, self.DFR.front,
+            self.DFR.right, self.DBR.right,
+            self.DBR.back, self.DBL.back,
+
+            self.DFL.bot, self.DFR.bot,
+            self.DBL.bot, self.DBR.bot
+        ))
+
     def is_solved(self) -> bool:
         """
         Check if cube is in a solved state
