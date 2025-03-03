@@ -191,8 +191,8 @@ class Cube:
         print(f'      | {self.DBL.bot} {self.DBR.bot} |')
         print(f'      +-----+')
 
-    def __hash__(self):
-        return hash((
+    def serialize(self):
+        return (
             self.UBL.top, self.UBR.top,
             self.UFL.top, self.UFR.top,
 
@@ -208,7 +208,13 @@ class Cube:
 
             self.DFL.bot, self.DFR.bot,
             self.DBL.bot, self.DBR.bot
-        ))
+        )
+
+    def __hash__(self):
+        return hash(self.serialize())
+
+    def __eq__(self, other):
+        return isinstance(other, Cube) and self.serialize() == other.serialize()
 
     def is_solved(self) -> bool:
         """
