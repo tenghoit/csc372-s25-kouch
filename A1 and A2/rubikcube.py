@@ -202,6 +202,20 @@ class Cube:
 
         return True
 
+    def is_same(self, other) -> bool:
+
+        positions = ['UFL', 'UFR', 'UBL', 'UBR', 'DFL', 'DFR', 'DBL', 'DBR']
+
+        for position in positions:
+            self_cubie = getattr(self, position)
+            other_cubie = getattr(other, position)
+
+            if self_cubie.same_color_orientation(other_cubie) == False:
+                return False
+
+        return True
+
+
     def getHeuristicScore(self) -> int:
         """
         Returns heuristic score of the current state. Combination of:
@@ -301,6 +315,8 @@ class Cube:
 
         if num_moves < 1: return
 
+        sequence = []
+
         # initial turn
         move = random.choice(list(Cube.moves.keys()))
         method_name = Cube.moves[move]
@@ -308,26 +324,24 @@ class Cube:
         num_moves -= 1
         method()
 
-        print(move)
-
-        last_move = move
+        sequence.append(move)
 
         while num_moves > 0:
 
             move = random.choice(list(Cube.moves.keys()))
 
-            if move == Cube.opposite_moves[last_move]:
+            if move == Cube.opposite_moves[sequence[-1]]:
                 continue
             else:
-                last_move = move
-
-                print(move)
+                sequence.append(move)
 
                 method_name = Cube.moves[move]
                 method = getattr(self, method_name)
                 method()
 
                 num_moves -= 1
+        
+        return sequence
     
 
             
