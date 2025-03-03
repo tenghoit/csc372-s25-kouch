@@ -107,24 +107,18 @@ class Solution:
 
     def iterative_deepening_depth_first_search(self) -> list[str]:
 
-        # start initial frontier
-        for move in Cube.moves.keys(): 
-            new_state = self.root.state.turn_and_clone(move)
-            self.frontier.append(Node(self.root, new_state, move))
-
         depth = 0
 
         while True:
-            for node in self.frontier:
-                result = self.depth_limited_search(node, depth)
-                
-                if result is not None:
-                    return result
-                
-                depth += 1
 
-        return None
+            result = self.depth_limited_search(self.root, depth)
+                
+            if result is not None:
+                return result
+            
+            depth += 1
 
+                
 
     def depth_limited_search(self, current_node, depth_limit) -> list[str]:
         
@@ -137,7 +131,7 @@ class Solution:
         # generate nodes
         for move in Cube.moves.keys():
 
-            if move == Cube.opposite_moves[current_node.action]:
+            if (current_node.action is not None) and (move == Cube.opposite_moves[current_node.action]):
                 continue
             
             new_state = current_node.state.turn_and_clone(move)
@@ -158,7 +152,7 @@ class Solution:
 def main():
     blocky = Cube()
     blocky.print()
-    sequence = blocky.randomize(5)
+    sequence = blocky.randomize(6)
     print(sequence)
     blocky.print()
 
