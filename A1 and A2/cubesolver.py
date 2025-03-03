@@ -1,4 +1,5 @@
 from rubikcube import Cubie, Cube
+import time
 
 class Node:
     def __init__(self, parent, state, action) -> None:
@@ -58,39 +59,36 @@ class Solution:
 
     def __init__(self, state: Cube) -> None:
         self.root = Node(parent=None, state=state, action=None)
-        self.explored = [self.root]
-        self.frontier = []
 
 
     def breadth_first_search(self) -> list[str]:
 
+        start_time = time.process_time()
+
+        explored = set()
+        explored.add(self.root.state)
+        frontier = []
+
         # start initial frontier
         for move in Cube.moves.keys(): 
             new_state = self.root.state.turn_and_clone(move)
-            self.frontier.append(Node(self.root, new_state, move))
+            frontier.append(Node(self.root, new_state, move))
 
         
-        while len(self.frontier) != 0:
+        while len(frontier) != 0:
 
-            print(f'Explored: {len(self.explored)} | Frontier: {len(self.frontier)}')
+            # print(f'Explored: {len(explored)} | Frontier: {len(frontier)}')
 
-            current_node = self.frontier.pop(0)
+            current_node = frontier.pop(0)
 
-            seen = False
-
-            # check if seen already
-            for node in self.explored:
-                if current_node.state.is_same(node.state) == True:
-                    print(current_node.state.is_same(node.state))
-                    seen = True
-                    break
-
-            if seen == True:
+            if current_node.state in explored:
                 continue
 
             # check if solved
             if current_node.state.is_solved() == True:
-                return current_node.get_action_sequence()
+                end_time = time.process_time()
+                sequence = current_node.get_action_sequence()
+                return [sequence, end_time-start_time]
 
             # generate nodes
             for move in Cube.moves.keys():
@@ -100,13 +98,14 @@ class Solution:
                 
                 new_state = current_node.state.turn_and_clone(move)
 
-                self.frontier.append(Node(current_node, new_state, move))
+                frontier.append(Node(current_node, new_state, move))
 
-            self.explored.append(current_node)
+            explored.add(current_node.state)
 
 
     def iterative_deepening_depth_first_search(self) -> list[str]:
-
+        
+        start_time = time.process_time()
         depth = 0
 
         while True:
@@ -114,7 +113,8 @@ class Solution:
             result = self.depth_limited_search(self.root, depth)
                 
             if result is not None:
-                return result
+                end_time = time.process_time()
+                return [result, end_time-start_time]
             
             depth += 1
 
@@ -158,11 +158,11 @@ def main():
 
     solution = Solution(blocky)
 
-    # result = solution.breadth_first_search()
-    # print(result)
+    result = solution.breadth_first_search()
+    print(f'BFS: {result[0]} | Time: {result[1]}')
 
     result = solution.iterative_deepening_depth_first_search()
-    print(result)
+    print(f'IDDFS: {result[0]} | Time: {result[1]}')
 
 
 
