@@ -119,7 +119,7 @@ class Cube:
 
     
     # xyz cords of corner cubies
-    positions = {
+    xyz_positions = {
         'UFL': [0, 0, 1],
         'UFR': [1, 0, 1],
         'UBL': [0, 1, 1],
@@ -241,7 +241,7 @@ class Cube:
         return True
 
 
-    def getHeuristicScore(self) -> int:
+    def get_heuristic_score(self) -> int:
         """
         Returns heuristic score of the current state. Combination of:
             * manhattan dist between current position and goal position of each cubie
@@ -251,19 +251,29 @@ class Cube:
         positions = ['UFL', 'UFR', 'UBL', 'UBR', 'DFL', 'DFR', 'DBL', 'DBR']
         total_score = 0
 
-        for key in self.cubies.keys():
+        for position in positions:
 
-            goal_position = self.cubies[key].goal_position
-            currentPosition = Cube.positions[key]
+            current_cubie = getattr(self, position)
+            goal_position = current_cubie.goal_position
+            current_xyz_position = Cube.xyz_positions[position]
 
-            manhattanDist = 0
+            manhattan_dist = 0
+            orientation_score = 0
+            
+            # not in correect pos
+            if(goal_position != current_xyz_position):
+                for i in range(3):
+                    manhattan_dist += abs( goal_position[i] - current_xyz_position[i] )
 
-            for i in range(3):
-                manhattanDist += abs( goal_position[i] - currentPosition[i] )
+
+            # check orientation
+            if Cube.solved_cube[position].same_color_orientation(current_cubie) == False:
+                orientation_score = 1
 
 
+            total_score += (manhattan_dist + orientation_score) / 8
 
-            totalScore += manhattanDist
+        return total_score
 
 
     def rotate_front_clockwise(self) -> None:
@@ -437,6 +447,8 @@ def interface():
         print('6: Rotate Right Counterclockwise')
         print('7: Check isSolved')
         print('8: Randomize')
+        print('9: Get Heuristic Score')
+        print('10: Reset')
 
         try:
             operation = int(input('\nSelect: '))
@@ -460,7 +472,11 @@ def interface():
                 print(blocky.isSolved())
             elif operation == 8: 
                 moves = int(input('How many rotations? '))
-                blocky.randomize(moves)
+                print(blocky.randomize(moves))
+            elif operation == 9: 
+                print(blocky.get_heuristic_score())
+            elif operation == 10:
+                blocky.reset()
             else:
                 print('Invalid Operation.')
         except ValueError:
@@ -468,5 +484,4 @@ def interface():
 
 
 if (__name__ == '__main__'):
-    cubieTest()
-    cubeTest()
+    interface()
