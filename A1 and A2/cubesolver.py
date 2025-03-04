@@ -1,5 +1,6 @@
 from rubikcube import Cubie, Cube
 import time
+import heapq
 
 class Node:
     def __init__(self, parent, state, action) -> None:
@@ -40,19 +41,13 @@ class Node:
 
         return pathCost
 
+    
+    def __lt__(self, other):
 
-class PriorityQueue:
-    """
-    Priority queue using a heap
-    """
-    def __init__(self) -> None:
-        self.queue = []
+        self_eval_score = self.get_path_cost() + self.state.get_heuristic_score()
+        other_eval_score = other.get_path_cost() + other.state.get_heuristic_score()
 
-    def isEmpty(self) -> bool:
-        if len(self.queue) == 0:
-            return True
-        
-        return False
+        return self_eval_score < other_eval_score
         
 
 class Solution:
@@ -117,8 +112,7 @@ class Solution:
                 return [result, end_time-start_time]
             
             depth += 1
-
-                
+       
 
     def depth_limited_search(self, current_node, depth_limit) -> list[str]:
         
@@ -148,11 +142,57 @@ class Solution:
         return None
 
 
+    def iterative_deepening_a_star(self):
+
+        start_time = time.process_time()
+
+        explored = set()
+        explored.add(self.root.state)
+        frontier = []
+
+        # start initial frontier
+        for move in Cube.moves.keys(): 
+            new_state = self.root.state.turn_and_clone(move)
+            new_node = Node(self.root, new_state, move)
+            # eval_score = new_node.get_path_cost() + new_node.state.get_heuristic_score()
+
+            heapq.heappush(frontier, new_node)
+        
+        while len(frontier) != 0:
+
+            print(f'Explored: {len(explored)} | Frontier: {len(frontier)}')
+
+            current_node = heapq.heappop(frontier)
+
+            if current_node.state in explored:
+                continue
+
+            # check if solved
+            if current_node.state.is_solved() == True:
+                end_time = time.process_time()
+                sequence = current_node.get_action_sequence()
+                return [sequence, end_time-start_time]
+
+            # generate nodes
+            for move in Cube.moves.keys():
+
+                if move == Cube.opposite_moves[current_node.action]:
+                    continue
+                
+                new_state = current_node.state.turn_and_clone(move)
+                new_node = Node(current_node, new_state, move)
+                # new_eval_score = new_node.get_path_cost() + new_node.state.get_heuristic_score()
+            
+                heapq.heappush(frontier, new_node)
+
+            explored.add(current_node.state)
+
+
 
 def main():
     blocky = Cube()
     blocky.print()
-    sequence = blocky.randomize(8)
+    sequence = blocky.randomize(6)
     print(sequence)
     blocky.print()
 
@@ -163,6 +203,9 @@ def main():
 
     result = solution.iterative_deepening_depth_first_search()
     print(f'IDDFS: {result[0]} | Time: {result[1]}')
+
+    result = solution.iterative_deepening_a_star()
+    print(f'A*: {result[0]} | Time: {result[1]}')
 
 
 
