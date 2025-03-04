@@ -248,7 +248,8 @@ class Cube:
             * color orientation
         """
 
-        totalScore = 0
+        positions = ['UFL', 'UFR', 'UBL', 'UBR', 'DFL', 'DFR', 'DBL', 'DBR']
+        total_score = 0
 
         for key in self.cubies.keys():
 
