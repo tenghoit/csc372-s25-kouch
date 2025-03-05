@@ -1,6 +1,7 @@
 from rubikcube import Cubie, Cube
 import time
 import heapq
+import math
 
 class Node:
     def __init__(self, parent, state, action) -> None:
@@ -42,10 +43,15 @@ class Node:
         return pathCost
 
     
+    def get_eval_score(self):
+        return float(self.get_path_cost() + self.state.get_heuristic_score())
+
+
+    # used for eval in heap
     def __lt__(self, other):
 
-        self_eval_score = self.get_path_cost() + self.state.get_heuristic_score()
-        other_eval_score = other.get_path_cost() + other.state.get_heuristic_score()
+        self_eval_score = self.get_eval_score()
+        other_eval_score = other.get_eval_score()
 
         return self_eval_score < other_eval_score
         
@@ -83,6 +89,7 @@ class Solution:
             if current_node.state.is_solved() == True:
                 end_time = time.process_time()
                 sequence = current_node.get_action_sequence()
+                print(f'Explored: {len(explored)} | Frontier: {len(frontier)}')
                 return [sequence, end_time-start_time]
 
             # generate nodes
@@ -142,7 +149,7 @@ class Solution:
         return None
 
 
-    def iterative_deepening_a_star(self):
+    def a_star(self):
 
         start_time = time.process_time()
 
@@ -160,7 +167,7 @@ class Solution:
         
         while len(frontier) != 0:
 
-            print(f'Explored: {len(explored)} | Frontier: {len(frontier)}')
+            # print(f'Explored: {len(explored)} | Frontier: {len(frontier)}')
 
             current_node = heapq.heappop(frontier)
 
@@ -171,6 +178,7 @@ class Solution:
             if current_node.state.is_solved() == True:
                 end_time = time.process_time()
                 sequence = current_node.get_action_sequence()
+                print(f'Explored: {len(explored)} | Frontier: {len(frontier)}')
                 return [sequence, end_time-start_time]
 
             # generate nodes
@@ -188,24 +196,85 @@ class Solution:
             explored.add(current_node.state)
 
 
+    def iterative_deepening_a_star(self):
+
+        start_time = time.process_time()
+        threshold = self.root.get_eval_score()
+
+        while True:
+            result = self.ida(self.root, threshold)
+
+            if isinstance(result, Node):
+                end_time = time.process_time()
+                return [result.get_action_sequence(), end_time-start_time]
+
+            threshold = result
+
+            
+
+    def ida(self, current_node, threshold):
+
+        eval_score = current_node.get_eval_score()
+
+        # too far away
+        if eval_score > threshold:
+            return eval_score
+
+        
+        if(current_node.state.is_solved() == True):
+            return current_node
+
+        
+        new_threshold = math.inf
+
+        # generate nodes
+        for move in Cube.moves.keys():
+
+            if (current_node.action is not None) and (move == Cube.opposite_moves[current_node.action]):
+                continue
+            
+            new_state = current_node.state.turn_and_clone(move)
+
+            new_node = Node(current_node, new_state, move)
+
+            result = self.ida(new_node, threshold)
+
+            if isinstance(result, Node):
+                return result
+
+            if result < new_threshold:
+                new_threshold = result
+
+
+        return new_threshold
+
+
+        
+
+
+
 
 def main():
     blocky = Cube()
     blocky.print()
-    sequence = blocky.randomize(6)
+    sequence = blocky.randomize(9)
     print(sequence)
     blocky.print()
 
     solution = Solution(blocky)
 
-    result = solution.breadth_first_search()
-    print(f'BFS: {result[0]} | Time: {result[1]}')
+    # result = solution.breadth_first_search()
+    # print(f'BFS: {result[0]} | Time: {result[1]}')
 
-    result = solution.iterative_deepening_depth_first_search()
-    print(f'IDDFS: {result[0]} | Time: {result[1]}')
+    # result = solution.iterative_deepening_depth_first_search()
+    # print(f'IDDFS: {result[0]} | Time: {result[1]}')
+
+    result = solution.a_star()
+    print(f'A*: {result[0]} | Time: {result[1]}')
 
     result = solution.iterative_deepening_a_star()
-    print(f'A*: {result[0]} | Time: {result[1]}')
+    print(f'IDA*: {result[0]} | Time: {result[1]}')
+
 
 
 
