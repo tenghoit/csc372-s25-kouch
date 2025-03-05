@@ -61,6 +61,8 @@ class Solution:
     def __init__(self, state: Cube) -> None:
         self.root = Node(parent=None, state=state, action=None)
 
+        self.nodes_visited = 0
+
 
     def breadth_first_search(self) -> list[str]:
 
@@ -107,6 +109,7 @@ class Solution:
 
     def iterative_deepening_depth_first_search(self) -> list[str]:
         
+        self.nodes_visited = 0
         start_time = time.process_time()
         depth = 0
 
@@ -116,12 +119,14 @@ class Solution:
                 
             if result is not None:
                 end_time = time.process_time()
-                return [result, end_time-start_time]
+                return [result, end_time-start_time, self.nodes_visited]
             
             depth += 1
        
 
     def depth_limited_search(self, current_node, depth_limit) -> list[str]:
+        
+        self.nodes_visited += 1
         
         if(current_node.state.is_solved() == True):
             return current_node.get_action_sequence()
@@ -197,7 +202,8 @@ class Solution:
 
 
     def iterative_deepening_a_star(self):
-
+        
+        self.nodes_visited = 0
         start_time = time.process_time()
         threshold = self.root.get_eval_score()
 
@@ -206,13 +212,15 @@ class Solution:
 
             if isinstance(result, Node):
                 end_time = time.process_time()
-                return [result.get_action_sequence(), end_time-start_time]
+                return [result.get_action_sequence(), end_time-start_time, self.nodes_visited]
 
             threshold = result
 
             
 
     def ida(self, current_node, threshold):
+
+        self.nodes_visited += 1
 
         eval_score = current_node.get_eval_score()
 
@@ -257,23 +265,23 @@ class Solution:
 def main():
     blocky = Cube()
     blocky.print()
-    sequence = blocky.randomize(9)
+    sequence = blocky.randomize(7)
     print(sequence)
     blocky.print()
 
     solution = Solution(blocky)
 
-    # result = solution.breadth_first_search()
-    # print(f'BFS: {result[0]} | Time: {result[1]}')
+    result = solution.breadth_first_search()
+    print(f'BFS: {result[0]} | Time: {result[1]}')
 
-    # result = solution.iterative_deepening_depth_first_search()
-    # print(f'IDDFS: {result[0]} | Time: {result[1]}')
+    result = solution.iterative_deepening_depth_first_search()
+    print(f'IDDFS: {result[0]} | Time: {result[1]} | Nodes Visted: {result[2]}')
 
     result = solution.a_star()
     print(f'A*: {result[0]} | Time: {result[1]}')
 
     result = solution.iterative_deepening_a_star()
-    print(f'IDA*: {result[0]} | Time: {result[1]}')
+    print(f'IDA*: {result[0]} | Time: {result[1]} | Nodes Visted: {result[2]}')
 
 
 
