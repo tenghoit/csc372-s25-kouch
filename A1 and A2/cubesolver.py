@@ -274,7 +274,7 @@ class Solution:
 def main():
     blocky = Cube()
     blocky.print()
-    sequence = blocky.randomize(7)
+    sequence = blocky.randomize(6)
     print(sequence)
     blocky.print()
 
