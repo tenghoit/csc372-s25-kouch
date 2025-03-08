@@ -54,7 +54,16 @@ class Node:
         other_eval_score = other.get_eval_score()
 
         return self_eval_score < other_eval_score
-        
+
+class Result:
+    def __init__(self, sequence, nodes_expanded, time_taken, nodes_on_pqueue):
+        self.sequence = sequence
+        self.nodes_expanded = nodes_expanded
+        self.time_taken = time_taken
+        self.nodes_on_pqueue = nodes_on_pqueue
+
+    def __str__(self):
+        return(f'Sequence: {self.sequence} | Nodes Expanded: {self.nodes_expanded} | Nodes in queue: {self.nodes_on_pqueue} | Time: {self.time_taken}')
 
 class Solution:
 
@@ -92,8 +101,10 @@ class Solution:
             if current_node.state.is_solved() == True:
                 end_time = time.process_time()
                 sequence = current_node.get_action_sequence()
-                print(f'Explored: {len(explored)} | Frontier: {len(frontier)}')
-                return [sequence, end_time-start_time]
+
+                result = Result(sequence, len(explored), end_time-start_time, len(frontier))
+                # print(f'Explored: {len(explored)} | Frontier: {len(frontier)}')
+                return result
 
             # generate nodes
             for move in Cube.moves.keys():
@@ -123,7 +134,8 @@ class Solution:
             if result is not None:
                 end_time = time.process_time()
                 self.total_nodes_visited += self.nodes_visited
-                return [result, end_time-start_time, self.nodes_visited, self.total_nodes_visited]
+                return Result(result.get_action_sequence(), self.total_nodes_visited, end_time-start_time, self.nodes_visited)
+
             
             depth += 1
 
@@ -220,7 +232,7 @@ class Solution:
             if isinstance(result, Node):
                 end_time = time.process_time()
                 self.total_nodes_visited += self.nodes_visited
-                return [result.get_action_sequence(), end_time-start_time, self.nodes_visited, self.total_nodes_visited]
+                return Result(result.get_action_sequence(), self.total_nodes_visited, end_time-start_time, self.nodes_visited)
 
             threshold = result
             self.total_nodes_visited += self.nodes_visited
@@ -271,7 +283,7 @@ class Solution:
 
 
 
-def main():
+def testing():
     blocky = Cube()
     blocky.print()
     sequence = blocky.randomize(6)
@@ -296,6 +308,58 @@ def main():
 
 
 
+def run_experiment(search_method):
+    
+    method_name = ''
+    if search_method == 'bfs':  
+        method_name = 'breadth_first_search'
+    elif search_method == 'iddfs':  
+        method_name = 'iterative_deepening_depth_first_search'
+    elif search_method == 'ida':  
+        method_name = 'iterative_deepening_a_star'
+
+    # max num turns is 14
+    for depth in range(1, 14): 
+
+        print(f'\nDepth: {depth}\n')
+
+        cubes = []
+
+        results = []
+
+        # create 20 cubes per depth
+        for i in range(20):
+            new_cube = Cube()
+            new_cube.randomize(depth)
+            cubes.append(new_cube)
+
+        
+        for cube in cubes:
+
+            new_solution = Solution(cube)
+
+            method = getattr(new_solution, method_name)
+            result = method()
+
+            print(result)
+
+            results.append(result)
+
+        avg_nodes_expanded = sum(result.nodes_expanded for result in results) / len(results)
+        avg_nodes_on_pqueue = sum(result.nodes_on_pqueue for result in results) / len(results)
+        avg_time_taken = sum(result.time_taken for result in results) / len(results)
+
+        avg_result = Result('', avg_nodes_expanded, avg_time_taken, avg_nodes_on_pqueue)
+
+        print(f'\nAverage:\n{avg_result}\n')
+
+
+
+
+
+def main():
+
+    run_experiment('ida')
 
 
 if (__name__ == '__main__'):
