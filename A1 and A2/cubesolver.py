@@ -317,6 +317,8 @@ def run_experiment(search_method, output_file_name, depth=None):
     elif search_method == 'ida':  
         method_name = 'iterative_deepening_a_star'
 
+    print(f'Running {method_name} Experiment...')
+
     lower_bound = 1
     upper_bound = 15
 
@@ -360,24 +362,21 @@ def run_experiment(search_method, output_file_name, depth=None):
 
         print(f'\nAverage:\n{avg_result}\n')
 
-
-        file_path = os.path.join('results', output_file_name)
+        # os.makedirs('results', exist_ok=True)
+        file_path = os.path.join('A1 and A2/results', output_file_name)
         with open(file_path, 'a', newline='', encoding='utf-8') as file:
 
             writer = csv.writer(file)
-            writer.writerow([avg_result.time_taken, avg_result.nodes_on_pqueue, avg_result.nodes_expanded])
+            writer.writerow([depth, avg_result.time_taken, avg_result.nodes_on_pqueue, avg_result.nodes_expanded])
             print(f'Average appended to file.')
-
-
-
-
 
 
 
 def main():
 
     run_experiment('ida', 'ida_data.csv')
-
+    run_experiment('iddfs', 'iddfs_data.csv')
+    run_experiment('bfs', 'bfs_data.csv')
 
 
 if (__name__ == '__main__'):
