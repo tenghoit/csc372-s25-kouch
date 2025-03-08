@@ -2,6 +2,8 @@ from rubikcube import Cubie, Cube
 import time
 import heapq
 import math
+import csv
+import os
 
 class Node:
     def __init__(self, parent, state, action) -> None:
@@ -56,14 +58,14 @@ class Node:
         return self_eval_score < other_eval_score
 
 class Result:
-    def __init__(self, sequence, nodes_expanded, time_taken, nodes_on_pqueue):
-        self.sequence = sequence
-        self.nodes_expanded = nodes_expanded
+    def __init__(self, time_taken, nodes_on_pqueue, nodes_expanded, sequence=None):
         self.time_taken = time_taken
         self.nodes_on_pqueue = nodes_on_pqueue
+        self.nodes_expanded = nodes_expanded
+        self.sequence = sequence
 
     def __str__(self):
-        return(f'Sequence: {self.sequence} | Nodes Expanded: {self.nodes_expanded} | Nodes in queue: {self.nodes_on_pqueue} | Time: {self.time_taken}')
+        return(f'Time: {self.time_taken} | Nodes in pqueue: {self.nodes_on_pqueue} | Nodes expanded: {self.nodes_expanded} | Sequence: {self.sequence}')
 
 class Solution:
 
@@ -100,11 +102,8 @@ class Solution:
             # check if solved
             if current_node.state.is_solved() == True:
                 end_time = time.process_time()
-                sequence = current_node.get_action_sequence()
-
-                result = Result(sequence, len(explored), end_time-start_time, len(frontier))
                 # print(f'Explored: {len(explored)} | Frontier: {len(frontier)}')
-                return result
+                return Result(end_time-start_time, len(frontier), len(explored), current_node.get_action_sequence())
 
             # generate nodes
             for move in Cube.moves.keys():
@@ -134,7 +133,7 @@ class Solution:
             if result is not None:
                 end_time = time.process_time()
                 self.total_nodes_visited += self.nodes_visited
-                return Result(result.get_action_sequence(), self.total_nodes_visited, end_time-start_time, self.nodes_visited)
+                return Result(end_time-start_time, self.nodes_visited, self.total_nodes_visited, result.get_action_sequence())
 
             
             depth += 1
@@ -232,7 +231,7 @@ class Solution:
             if isinstance(result, Node):
                 end_time = time.process_time()
                 self.total_nodes_visited += self.nodes_visited
-                return Result(result.get_action_sequence(), self.total_nodes_visited, end_time-start_time, self.nodes_visited)
+                return Result(end_time-start_time, self.nodes_visited, self.total_nodes_visited, result.get_action_sequence())
 
             threshold = result
             self.total_nodes_visited += self.nodes_visited
@@ -308,7 +307,7 @@ def testing():
 
 
 
-def run_experiment(search_method):
+def run_experiment(search_method, output_file_name, depth=None):
     
     method_name = ''
     if search_method == 'bfs':  
@@ -318,8 +317,15 @@ def run_experiment(search_method):
     elif search_method == 'ida':  
         method_name = 'iterative_deepening_a_star'
 
+    lower_bound = 1
+    upper_bound = 15
+
+    if depth is not None:
+        lower_bound = depth
+        upper_bound = depth
+
     # max num turns is 14
-    for depth in range(1, 14): 
+    for depth in range(lower_bound, upper_bound): 
 
         print(f'\nDepth: {depth}\n')
 
@@ -330,28 +336,39 @@ def run_experiment(search_method):
         # create 20 cubes per depth
         for i in range(20):
             new_cube = Cube()
-            new_cube.randomize(depth)
+            print(f'Cube {i} randomized sequence: {new_cube.randomize(depth)}')
             cubes.append(new_cube)
 
         
-        for cube in cubes:
+        for i in range(len(cubes)):
 
-            new_solution = Solution(cube)
+            new_solution = Solution(cubes[i])
 
             method = getattr(new_solution, method_name)
             result = method()
 
-            print(result)
+            print(f'Cube {i} solution: {result}')
 
             results.append(result)
 
-        avg_nodes_expanded = sum(result.nodes_expanded for result in results) / len(results)
-        avg_nodes_on_pqueue = sum(result.nodes_on_pqueue for result in results) / len(results)
         avg_time_taken = sum(result.time_taken for result in results) / len(results)
+        avg_nodes_on_pqueue = sum(result.nodes_on_pqueue for result in results) / len(results)
+        avg_nodes_expanded = sum(result.nodes_expanded for result in results) / len(results)
 
         avg_result = Result('', avg_nodes_expanded, avg_time_taken, avg_nodes_on_pqueue)
+        avg_result = Result(avg_time_taken, avg_nodes_on_pqueue, avg_nodes_expanded)
 
         print(f'\nAverage:\n{avg_result}\n')
+
+
+        file_path = os.path.join('results', output_file_name)
+        with open(file_path, 'a', newline='', encoding='utf-8') as file:
+
+            writer = csv.writer(file)
+            writer.writerow([avg_result.time_taken, avg_result.nodes_on_pqueue, avg_result.nodes_expanded])
+            print(f'Average appended to file.')
+
+
 
 
 
@@ -359,7 +376,8 @@ def run_experiment(search_method):
 
 def main():
 
-    run_experiment('ida')
+    run_experiment('ida', 'ida_data.csv')
+
 
 
 if (__name__ == '__main__'):
