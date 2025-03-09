@@ -307,7 +307,7 @@ def testing():
 
 
 
-def run_experiment(search_method, output_file_name, depth=None):
+def run_experiment(search_method, output_file_name, bound=None):
     
     method_name = ''
     if search_method == 'bfs':  
@@ -322,9 +322,9 @@ def run_experiment(search_method, output_file_name, depth=None):
     lower_bound = 1
     upper_bound = 15
 
-    if depth is not None:
-        lower_bound = depth
-        upper_bound = depth
+    if bound is not None:
+        lower_bound = bound[0]
+        upper_bound = bound[1]
 
     # max num turns is 14
     for depth in range(lower_bound, upper_bound): 
@@ -374,8 +374,8 @@ def run_experiment(search_method, output_file_name, depth=None):
 
 def main():
 
-    # run_experiment('ida', 'ida_data.csv')
-    run_experiment('iddfs', 'iddfs_data.csv')
+    run_experiment('ida', 'ida_data.csv', [13,14])
+    # run_experiment('iddfs', 'iddfs_data.csv')
     # run_experiment('bfs', 'bfs_data.csv')
 
 
