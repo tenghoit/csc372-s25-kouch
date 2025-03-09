@@ -368,6 +368,8 @@ class Cube:
 
             if move == Cube.opposite_moves[sequence[-1]]:
                 continue
+            elif len(sequence) > 1 and move == sequence[-1] and move == sequence[-2]:
+                continue
             else:
                 sequence.append(move)
 

@@ -146,7 +146,7 @@ class Solution:
         self.nodes_visited += 1
         
         if(current_node.state.is_solved() == True):
-            return current_node.get_action_sequence()
+            return current_node
 
         if depth_limit == 0:
             return None
@@ -374,9 +374,9 @@ def run_experiment(search_method, output_file_name, depth=None):
 
 def main():
 
-    run_experiment('ida', 'ida_data.csv')
+    # run_experiment('ida', 'ida_data.csv')
     run_experiment('iddfs', 'iddfs_data.csv')
-    run_experiment('bfs', 'bfs_data.csv')
+    # run_experiment('bfs', 'bfs_data.csv')
 
 
 if (__name__ == '__main__'):
