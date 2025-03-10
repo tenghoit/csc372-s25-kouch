@@ -375,7 +375,7 @@ def run_experiment(search_method, output_file_name, bound=None):
 def main():
 
     # run_experiment('ida', 'ida_data.csv', [13,14])
-    run_experiment('iddfs', 'iddfs_data.csv', [10,15])
+    run_experiment('iddfs', 'iddfs_data.csv', [11,15])
     # run_experiment('bfs', 'bfs_data.csv')
 
 
