@@ -1,39 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Function prototypes (if needed)
+void read_cnf_file(FILE *input_file,int **clauses, int *clause_sizes){
 
-int main(int argc, char *argv[]) {
-
-    if (argc != 2) {
-        fprintf(stderr, "Usage: %s <filename>\n", argv[0]);
-        return EXIT_FAILURE;
-    }
-
-    FILE *input_file = fopen(argv[1], "r");
-    if (input_file == NULL) {
-        printf("Error in opening file");
-        return 1;
-    }
-
-    int num_variables;
-    int num_clauses;
-
-    fscanf(input_file, "p cnf %d %d", &num_variables, &num_clauses);
-
-    printf("# of Variables: %d | # of Clauses: %d\n", num_variables, num_clauses);
-
-    int **clauses = malloc(sizeof(int *) * num_clauses);
     int clause_index = 0;
-    int *clause_sizes = malloc(sizeof(int) * num_clauses);  // Array to store the size of each clause
-
     char buffer[256];
+
     while (fgets(buffer, sizeof(buffer), input_file) != NULL)
     {
-        if (buffer[0] == 'p')
-        {
-            continue;
-        }
+        if (buffer[0] == 'p'){ continue; }
         
         int literal;
         int num_literals = 0;
@@ -83,19 +58,47 @@ int main(int argc, char *argv[]) {
             clause_index++;
         }
 
-
-        
     }
-    
+}
 
+void print_clauses(int **clauses, int *clause_sizes){
     // Print the clauses (just to verify)
-    for (int i = 0; i < num_clauses; i++) {
+    for (int i = 0; i < sizeof(clauses); i++) {
         printf("Clause %d: ", i);
         for (int j = 0; j < clause_sizes[i]; j++) {
             printf("%d ", clauses[i][j]);
         }
         printf("\n");
     }
+}
+
+
+int main(int argc, char *argv[]) {
+
+    if (argc != 2) {
+        fprintf(stderr, "Usage: %s <filename>\n", argv[0]);
+        return EXIT_FAILURE;
+    }
+
+    FILE *input_file = fopen(argv[1], "r");
+    if (input_file == NULL) {
+        printf("Error in opening file");
+        return 1;
+    }
+
+    int num_variables;
+    int num_clauses;
+    fscanf(input_file, "p cnf %d %d", &num_variables, &num_clauses);
+
+    printf("# of Variables: %d | # of Clauses: %d\n", num_variables, num_clauses);
+
+    int **clauses = malloc(sizeof(int *) * num_clauses);
+    int *clause_sizes = malloc(sizeof(int) * num_clauses);  // Array to store the size of each clause
+
+    read_cnf_file(input_file, clauses, clause_sizes);
+    
+    print_clauses(clauses, clause_sizes);
+
 
 
     // int *varibles = malloc();
