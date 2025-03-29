@@ -1,6 +1,7 @@
 import os
 import sys
 import time
+import random
 
 
 class SAT:
@@ -17,6 +18,8 @@ class SAT:
         with open(file_name, 'r') as file:
 
             line = file.readline()
+            while line[0] == 'c':
+                line = file.readline()
 
             if(line != ''):
                 metadata = line.split()
@@ -67,6 +70,29 @@ class SAT:
                 return False
             
         return True
+    
+
+    def get_false_clauses(self, assignment: list[int]):
+
+        result = []
+
+        for disjunction in self.clauses:
+
+            valid = False
+
+            for literal in disjunction:
+
+                if literal == assignment[abs(literal)]:
+                    valid = True
+                    break
+
+            if valid == False:
+                result.append(disjunction)
+
+
+        return result
+
+
 
 
     def hill_climb(self):
@@ -100,17 +126,59 @@ class SAT:
         print(f'SAT: {assignment}')
 
     
+    def walkSAT(self, probability: float, max_flips: int):
 
+        # inital random
+        assignment = [i if random.random() < 0.5 else -i for i in range(self.num_variables + 1)]
 
+        
+        for iteration in range(max_flips):
+            print(f'\nIteration {iteration}')
+            print(f'Starting Assignment: {assignment} | Score: {self.evaluate_assignment(assignment)}')
 
-def DPLL(clauses: list[list[int]]):
-    pass
+            if self.is_SAT(assignment) == True:
+                print(f'SAT: {assignment}')
+                return
+            
 
+            false_clauses = self.get_false_clauses(assignment)
 
+            selected_clause = random.choice(false_clauses)
+            print(f'Selected Clause: {selected_clause}')
 
-def walkSAT(clauses: list[list[int]]):
-    pass
+            if random.random() < probability: 
+                
+                selected_literal = random.choice(selected_clause)
 
+                assignment[abs(selected_literal)] *= -1
+
+                print(f'Random Walk: {assignment[abs(selected_literal)]}')
+
+            else:
+                best_assignment = []
+                best_score = float('-inf')
+
+                for literal in selected_clause:
+                    print(literal)
+
+                    new_assignment = assignment[:]
+                    print(new_assignment)
+
+                    new_assignment[abs(literal)] *= -1
+
+                    new_score = self.evaluate_assignment(new_assignment)
+
+                    print(f'New assignment: {new_assignment} | New score: {new_score}')
+
+                    if new_score > best_score:
+                        best_assignment = new_assignment
+                        best_score = new_score
+                        print(f'Best Assignment: {new_assignment} | Score: {new_score}')
+
+                assignment = best_assignment
+
+        
+        return None
 
 
 def main():
@@ -120,7 +188,7 @@ def main():
         exit()
 
     axo = SAT(sys.argv[1])
-    axo.hill_climb()
+    axo.walkSAT(0.5, 1000000)
     
 
 
