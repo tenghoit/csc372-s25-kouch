@@ -36,6 +36,10 @@ def cell_to_var(row: int, col: int, letter: int) -> int:
     return row * 25**2 + col * 25 + letter # letter_dict[letter]
 
 
+def var_to_cell(var):
+    pass
+
+
 def single_letter_per_cell(file):
     with open(file, 'a') as f:
 
@@ -204,11 +208,28 @@ def generate_puzzle_cnf_files():
         process_alpha_file(file_path, file_name)
 
 
+def read_output_file(file_path):
+    vars = []
+
+    with open(file_path, 'r') as f:
+        lines = f.readlines()
+        content = lines[1].split()
+        content.pop()
+
+        valid = [int(str) for str in content if str[0] != '-']
+
+        vars = [vars[ i*25 : (i+1)*25] for i in range(24)]
+        print(vars)
+
+
+
+
 def main():
     # generate_base_cnf_file('base2.cnf')
     # run_experiment()
 
-    generate_puzzle_cnf_files()
+    # generate_puzzle_cnf_files()
+    read_output_file()
 
 
 if __name__ == '__main__':
