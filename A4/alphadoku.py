@@ -1,36 +1,38 @@
 import os
 import shutil
 
+
+letter_dict = {
+    'A': 1,
+    'B': 2,
+    'C': 3,
+    'D': 4,
+    'E': 5,
+    'F': 6,
+    'G': 7,
+    'H': 8,
+    'I': 9,
+    'J': 10,
+    'K': 11,
+    'L': 12,
+    'M': 13,
+    'N': 14,
+    'O': 15,
+    'P': 16,
+    'Q': 17,
+    'R': 18,
+    'S': 19,
+    'T': 20,
+    'U': 21,
+    'V': 22,
+    'W': 23,
+    'X': 24,
+    'Y': 25
+}
+
+
 def cell_to_var(row: int, col: int, letter: int) -> int:
     
-    letter_dict = {
-        'A': 1,
-        'B': 2,
-        'C': 3,
-        'D': 4,
-        'E': 5,
-        'F': 6,
-        'G': 7,
-        'H': 8,
-        'I': 9,
-        'J': 10,
-        'K': 11,
-        'L': 12,
-        'M': 13,
-        'N': 14,
-        'O': 15,
-        'P': 16,
-        'Q': 17,
-        'R': 18,
-        'S': 19,
-        'T': 20,
-        'U': 21,
-        'V': 22,
-        'W': 23,
-        'X': 24,
-        'Y': 25
-    }
-
     return row * 25**2 + col * 25 + letter # letter_dict[letter]
 
 
@@ -111,45 +113,23 @@ def single_letter_per_box(file):
 
 
                     for first_cell in range(24):
-                        for second_cell in range(first_cell+1,25):
+                        first_cell_row = surrounding_cells[first_cell][0]
+                        first_cell_col = surrounding_cells[first_cell][1]
 
-                            first_var = cell_to_var(surrounding_cells[first_cell][0], surrounding_cells[first_cell][1], letter)
-                            second_var = cell_to_var(surrounding_cells[second_cell][0], surrounding_cells[second_cell][1], letter)
+                        for second_cell in range(first_cell+1,25):
+                            second_cell_row = surrounding_cells[second_cell][0]
+                            second_cell_col = surrounding_cells[second_cell][1]
+
+                            if first_cell_row == second_cell_row or first_cell_col == second_cell_col: continue
+
+                            first_var = cell_to_var(first_cell_row, first_cell_col, letter)
+                            second_var = cell_to_var(second_cell_row, second_cell_col, letter)
 
                             
                             f.write(f'-{first_var} -{second_var} 0\n')
 
 
 def process_alpha_file(file_path, file_name):
-
-    letter_dict = {
-        'A': 1,
-        'B': 2,
-        'C': 3,
-        'D': 4,
-        'E': 5,
-        'F': 6,
-        'G': 7,
-        'H': 8,
-        'I': 9,
-        'J': 10,
-        'K': 11,
-        'L': 12,
-        'M': 13,
-        'N': 14,
-        'O': 15,
-        'P': 16,
-        'Q': 17,
-        'R': 18,
-        'S': 19,
-        'T': 20,
-        'U': 21,
-        'V': 22,
-        'W': 23,
-        'X': 24,
-        'Y': 25
-    }
-
 
     puzzle = []
 
@@ -160,10 +140,10 @@ def process_alpha_file(file_path, file_name):
         while current_row < 25:
 
             line = f.readline()
-
+            # empty line
             if(len(line) == 1):
                 continue
-
+            #care only about letter or _
             chars = [char for char in line if char != ' ' and char != '\n']
             puzzle.append(chars)
             current_row += 1
@@ -172,12 +152,14 @@ def process_alpha_file(file_path, file_name):
     for row in range(len(puzzle)):
         print(f'Row {row}: {puzzle[row]}')
 
+    # taking base cnf
     lines = []
-    with open('base.txt', 'r') as f:
+    with open('base.cnf', 'r') as f:
         lines = f.readlines()
 
     additional_clauses = 0
 
+    # scanning curr puzzle, if have letter, add unit clause
     for row in range(25):
         for col in range(25):
             if puzzle[row][col] == '_': continue
@@ -189,42 +171,44 @@ def process_alpha_file(file_path, file_name):
 
     print(f'Addtional clauses: {additional_clauses}')
 
+    # update clause cnt
     header = lines[0].split()
     header[3] = str(int(header[3]) + additional_clauses)
     lines[0] = ' '.join(header) + '\n'
 
+    # create new cnf file
     output_directory = 'cnf'
     output_file_path = os.path.join(output_directory, file_name[:-3] + 'cnf')
 
     with open(output_file_path, 'w') as f:
         f.writelines(lines)
 
+    print(f'Generated {output_file_path}')
+
+
+def generate_base_cnf_file(file_path):
+    single_letter_per_cell(file_path)
+    single_letter_per_row(file_path)
+    single_letter_per_col(file_path)
+    single_letter_per_box(file_path)
 
 
 
 
-
-
-def main():
-
-    text_file = 'base.txt'
-    # single_letter_per_cell(text_file)
-    # single_letter_per_row(text_file)
-    # single_letter_per_col(text_file)
-    # single_letter_per_box(text_file)
+def generate_puzzle_cnf_files():
 
     directory = 'puzzles'
 
-    # for file_name in os.listdir(directory):
-    #     file_path = os.path.join(directory, file_name)
+    for file_name in os.listdir(directory):
+        file_path = os.path.join(directory, file_name)
+        process_alpha_file(file_path, file_name)
 
 
-    #     print(file_name[:-3])
-    test_file_name = 'alpha_0.txt'
-    test_file_path = os.path.join(directory, test_file_name)
+def main():
+    # generate_base_cnf_file('base2.cnf')
+    # run_experiment()
 
-    process_alpha_file(test_file_path, test_file_name)
-
+    generate_puzzle_cnf_files()
 
 
 if __name__ == '__main__':
