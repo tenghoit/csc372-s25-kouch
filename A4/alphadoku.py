@@ -40,7 +40,7 @@ def var_to_cell(var):
     pass
 
 
-def single_letter_per_cell(file):
+def at_most_one_letter_per_cell(file):
     with open(file, 'a') as f:
 
         for row in range(25):
@@ -59,7 +59,7 @@ def single_letter_per_cell(file):
 
 
 
-def single_letter_per_row(file):
+def at_most_one_letter_per_row(file):
     with open(file, 'a') as f:
 
         for letter in range(1, 26):
@@ -79,7 +79,7 @@ def single_letter_per_row(file):
 
 
 
-def single_letter_per_col(file):
+def at_most_one_letter_per_col(file):
     
     with open(file, 'a') as f:
 
@@ -100,7 +100,7 @@ def single_letter_per_col(file):
 
 
             
-def single_letter_per_box(file):
+def at_most_one_letter_per_box(file):
     
     with open(file, 'a') as f:
         for letter in range(1, 26):
@@ -131,6 +131,90 @@ def single_letter_per_box(file):
 
                             
                             f.write(f'-{first_var} -{second_var} 0\n')
+
+
+def at_least_one_letter_in_each_cell(file_path):
+    with open(file_path, 'a') as f:
+        for row in range(25):
+            for col in range(25):
+                
+                clause = ''
+
+                for letter in range(1, 26):
+                    var = cell_to_var(row, col, letter)
+                    clause += f'{var} '
+                
+                clause += '0\n'
+
+                f.write(clause)
+
+
+
+def at_least_one_letter_in_each_row(file_path):
+    with open(file_path, 'a') as f:
+
+        for letter in range(1, 26):
+
+            for row in range(25):
+
+                clause = ''
+
+                for col in range(25):
+                    var = cell_to_var(row, col, letter)
+                    clause += f'{var} '
+
+                clause += '0\n'
+
+                f.write(clause)
+
+
+
+def at_least_one_letter_in_each_col(file_path):
+    with open(file_path, 'a') as f:
+
+        for letter in range(1, 26):
+
+            for col in range(25):
+
+                clause = ''
+
+                for row in range(25):
+                    var = cell_to_var(row, col, letter)
+                    clause += f'{var} '
+
+                clause += '0\n'
+
+                f.write(clause)
+
+
+def at_least_one_letter_in_each_box(file_path):
+    with open(file_path, 'a') as f:
+        for letter in range(1, 26):
+
+            for box_row in range(0, 25, 5):
+                for box_col in range(0, 25, 5):
+
+
+                    surrounding_cells = []
+
+                    for row in range(5):
+                        for col in range(5):
+                            surrounding_cells.append([box_row + row, box_col + col])
+
+                    clause = ''
+
+                    for cell in surrounding_cells:
+
+                        var = cell_to_var(cell[0], cell[1], letter)
+                        clause += f'{var} '
+
+                    clause += '0\n'
+
+                    f.write(clause)
+
+    
+
+
 
 
 def process_alpha_file(file_path, file_name):
@@ -191,10 +275,15 @@ def process_alpha_file(file_path, file_name):
 
 
 def generate_base_cnf_file(file_path):
-    single_letter_per_cell(file_path)
-    single_letter_per_row(file_path)
-    single_letter_per_col(file_path)
-    single_letter_per_box(file_path)
+    at_least_one_letter_in_each_cell(file_path)
+    at_least_one_letter_in_each_row(file_path)
+    at_least_one_letter_in_each_col(file_path)
+    at_least_one_letter_in_each_box(file_path)
+
+    at_most_one_letter_per_cell(file_path)
+    at_most_one_letter_per_row(file_path)
+    at_most_one_letter_per_col(file_path)
+    at_most_one_letter_per_box(file_path)
 
 
 
@@ -217,8 +306,10 @@ def read_output_file(file_path):
         content.pop()
 
         valid = [int(str) for str in content if str[0] != '-']
+        print(f'Cnt Vars: {len(valid)}')
 
-        vars = [vars[ i*25 : (i+1)*25] for i in range(24)]
+        vars = [valid[ i*25 : (i+1)*25] for i in range(25)]
+        vars = []
         print(vars)
 
 
@@ -228,8 +319,8 @@ def main():
     # generate_base_cnf_file('base2.cnf')
     # run_experiment()
 
-    # generate_puzzle_cnf_files()
-    read_output_file()
+    generate_puzzle_cnf_files()
+    # read_output_file('results/alpha_0.txt')
 
 
 if __name__ == '__main__':
