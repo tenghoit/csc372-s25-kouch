@@ -1,0 +1,1104 @@
+alpha_15.txt
+No Solution
+alpha_29.txt
+SATISFIABLE
+D V O H P  M I A Q E  R C G J L  F U S N X  T B K Y W  
+U S A E R  Y O B H L  T V P Q X  M D K C W  I G F N J  
+W X B Y I  V U P S C  F A K N D  J G T R Q  L E M O H  
+Q T N G M  X F D K J  I W Y H U  L O E A B  P S R C V  
+F J K L C  T G N R W  B S E M O  Y P I H V  X U Q D A  
+
+L A Y T G  W M X E P  V B D R Q  U S N J H  C K O F I  
+B P S F O  L T K A Q  Y U C I E  D M W V R  H X G J N  
+I Q U X V  B R Y J N  K F W S H  O A G E C  D M L T P  
+M E D C N  U S H I F  O G A L J  K X Q T P  V R B W Y  
+J R H K W  G V C D O  X N M T P  I L B F Y  A Q U E S  
+
+O F X U L  K A V P T  E M R Y B  H J D W N  S C I G Q  
+V W R N Y  O E L B S  P Q U F I  C T M X G  K J A H D  
+H K T A S  R C U G X  L D J W N  B Q Y I F  O P V M E  
+G C M J E  N D Q W I  A K H V S  P R O U L  Y F T B X  
+P D I B Q  F J M Y H  C O X G T  A E V K S  N L W R U  
+
+E B F P J  I H R U V  Q T S C K  G N A M D  W Y X L O  
+R M G O U  A X S N Y  D I L P W  T V C Q J  B H E K F  
+C H V S T  E P W L D  U J O A Y  X F R B K  M I N Q G  
+X N Q I D  J K O C M  G E V B F  W Y H L U  R A P S T  
+A Y L W K  Q B F T G  H R N X M  S I P O E  J V D U C  
+
+S L P R H  C Q G F K  M Y T O V  E W X D I  U N J A B  
+T U C V X  D N E O A  J P B K R  Q H F S M  G W Y I L  
+N G E Q B  P L J M R  W H I D A  V C U Y T  F O S X K  
+K I W M A  H Y T X U  S L F E G  N B J P O  Q D C V R  
+Y O J D F  S W I V B  N X Q U C  R K L G A  E T H P M  
+
+Additional Solution
+D V O H P  M I A Q E  R C G J L  F U S N X  T B K Y W  
+U S A E R  Y O B H L  T V P Q X  M D K C W  I G F N J  
+W X B Y I  V U P S C  F A K N D  J G T R Q  L E M O H  
+Q T N G M  X F D K J  I W Y H U  L O E A B  P S R C V  
+F J K L C  T G N R W  B S E M O  Y P I H V  X U Q D A  
+
+L G Y T A  W M X E P  V B D R Q  U S N J H  C K O F I  
+B P S F O  L T K A Q  Y U C I E  D M W V R  H X G J N  
+I Q U X V  B R Y J N  K F W S H  O A G E C  D M L T P  
+M E D C N  U S H I F  O G A L J  K X Q T P  V R B W Y  
+J R H K W  G V C D O  X N M T P  I L B F Y  A Q U E S  
+
+O F X U L  K A V P T  E M R Y B  H J D W N  S C I G Q  
+V W R N Y  O E L B S  P Q U F I  C T M X G  K J A H D  
+H K T A S  R C U G X  L D J W N  B Q Y I F  O P V M E  
+G C M J E  N D Q W I  A K H V S  P R O U L  Y F T B X  
+P D I B Q  F J M Y H  C O X G T  A E V K S  N L W R U  
+
+E B F P J  I H R U V  Q T S C K  G N A M D  W Y X L O  
+R M G O U  A X S N Y  D I L P W  T V C Q J  B H E K F  
+C H V S T  E P W L D  U J O A Y  X F R B K  M I N Q G  
+X N Q I D  J K O C M  G E V B F  W Y H L U  R A P S T  
+A Y L W K  Q B F T G  H R N X M  S I P O E  J V D U C  
+
+S L P R H  C Q G F K  M Y T O V  E W X D I  U N J A B  
+T U C V X  D N E O A  J P B K R  Q H F S M  G W Y I L  
+N A E Q B  P L J M R  W H I D G  V C U Y T  F O S X K  
+K I W M G  H Y T X U  S L F E A  N B J P O  Q D C V R  
+Y O J D F  S W I V B  N X Q U C  R K L G A  E T H P M  
+
+alpha_28.txt
+SATISFIABLE
+J O V A Q  X N H I P  L F W K T  E G U B R  C Y D M S  
+L P U Y D  B E O R T  M I G C X  A V S K W  F H J Q N  
+T M N E B  L Y C K F  R U J O S  D Q H P I  W A G V X  
+R I S C X  G W V J Q  B H A N D  T M F L Y  K O P U E  
+G F K W H  M A S U D  P Y V Q E  O C N X J  B T I R L  
+
+U K R M W  V P L F J  N B S G I  X O Y E H  A C Q D T  
+B V I G L  R U X T A  E O P Y H  C W J Q D  M N K S F  
+E C A T N  W K G H Y  F D X M Q  L P V I S  U J B O R  
+P Q F H J  S O N D M  C L T R V  B K G A U  E W Y X I  
+Y D X O S  C I E Q B  K A U J W  N F T R M  L P V G H  
+
+F U B K O  A J R G N  T P D I C  V E W Y L  X S M H Q  
+A T G J P  Y B F L O  V K H W U  M X D S Q  I R E N C  
+X N D S V  P T M C K  J Q F E G  H R I U O  Y L A W B  
+C L H I M  E Q U V W  X S R A Y  J N B F P  O G T K D  
+W Y E Q R  D X I S H  O N M B L  K T A C G  J U F P V  
+
+O B C L Y  F R T A E  U G Q S J  W D K M X  N V H I P  
+K A M N F  H L B Y G  I W C T O  P S Q J V  R D X E U  
+I G W V T  O M D P U  Y X E H B  F L R N C  Q K S A J  
+S H J P E  N C Q X I  D V K L R  U B O G A  T M W F Y  
+D X Q R U  J V K W S  A M N F P  Y I E H T  G B L C O  
+
+M R O B A  I D J E C  G T L P F  S H X W N  V Q U Y K  
+V E T U I  Q G Y M X  H C B D A  R J P O K  S F N L W  
+N S P D C  K F A B V  W R Y X M  Q U L T E  H I O J G  
+Q J Y F G  U H W N L  S E O V K  I A C D B  P X R T M  
+H W L X K  T S P O R  Q J I U N  G Y M V F  D E C B A  
+
+Additional Solution
+J O V A Q  X N H I P  L F W K T  E G U B R  C Y D M S  
+L P U Y D  B E O R T  M I G C X  A V S K W  F H J Q N  
+T M N E B  L Y C K F  R U J O S  D Q H P I  W A G V X  
+R I S C X  G W V J Q  B H A N D  T M F L Y  K O P U E  
+G F K W H  M A S U D  P Y V Q E  O C N X J  B T I R L  
+
+U K R M W  V P L F J  N B S G I  X O Y E H  A C Q D T  
+B V I G L  R U X T A  E O P Y H  C W J Q D  M N K S F  
+E C A T N  W K G H Y  F D X M Q  L P V I S  U J B O R  
+P Q F H J  S O N D M  C L T R V  B K G A U  E W Y X I  
+Y D X O S  C I E Q B  K A U J W  N F T R M  L P V G H  
+
+F U B K O  A J R G N  T P D I C  V E W Y L  X S M H Q  
+A T G J P  Y B F L O  V K H W U  M X D S Q  I R E N C  
+X N D S V  P T M C K  Q J F E G  H R I U O  Y L A W B  
+C L H I M  E Q U V W  X S R A Y  J N B F P  O G T K D  
+W Y E Q R  D X I S H  O N M B L  K T A C G  J U F P V  
+
+O B C L Y  F R T A E  U G Q S J  W D K M X  N V H I P  
+K A M N F  H L B Y G  I W C T O  P S Q J V  R D X E U  
+I G W V T  O M D P U  Y X E H B  F L R N C  Q K S A J  
+S H J P E  N C Q X I  D V K L R  U B O G A  T M W F Y  
+D X Q R U  J V K W S  A M N F P  Y I E H T  G B L C O  
+
+M R O B A  I D J E C  G T L P F  S H X W N  V Q U Y K  
+V E T U I  Q G Y M X  H C B D A  R J P O K  S F N L W  
+N S P D C  K F A B V  W R Y X M  Q U L T E  H I O J G  
+Q J Y F G  U H W N L  S E O V K  I A C D B  P X R T M  
+H W L X K  T S P O R  J Q I U N  G Y M V F  D E C B A  
+
+alpha_14.txt
+No Solution
+alpha_16.txt
+No Solution
+alpha_17.txt
+No Solution
+alpha_13.txt
+SATISFIABLE
+U R H W Y  J X G N K  L A B P I  Q E M F O  C S T V D  
+Q G L C B  U A M E W  N J K D T  Y I P S V  O R X H F  
+N J V K P  I C S Q H  U W M O F  R X D T G  L Y A B E  
+E D I T M  P L B F O  Y R S X V  U W C A H  G K N J Q  
+A X S O F  R D Y T V  Q C G E H  L N K J B  U W M I P  
+
+C A U M X  F Q P W J  V E D I G  K R O Y N  B T H S L  
+L Q W N V  C K R U B  A M H J Y  S P I G T  E X D F O  
+J E G B R  L T A Y I  K O P S X  D U F H Q  M V W C N  
+P F K D T  H S V O G  W B N Q U  C M E X L  Y J R A I  
+H O Y I S  X E N M D  F L R T C  W V J B A  Q G P K U  
+
+B C Q L J  Y N W A F  M U V G P  I T R E X  H O K D S  
+W N M V K  D J Q C R  I H L F E  P S Y O U  A B G X T  
+F I X G D  K P E H T  R Y O C S  A B Q L M  V N U W J  
+R P T U A  O V L S M  B N X W D  J G H C K  I E F Q Y  
+O Y E S H  B G X I U  T Q A K J  N D V W F  P C L R M  
+
+M L B R N  W Y C J E  S V U H A  T F G D P  X I Q O K  
+K U C Q E  N O D R L  J I T M B  H Y X V W  F A S P G  
+D T J P I  V M U G S  X K F Y O  B A L Q C  W H E N R  
+Y S A F G  Q I H K X  D P C N W  E O U R J  T L B M V  
+V H O X W  A F T B P  E G Q L R  M K N I S  D U J Y C  
+
+I B N J U  E R K P Q  C D W A L  V H T M Y  S F O G X  
+G W D E Q  S U I X C  H F J V M  O L A N R  K P Y T B  
+T M P H L  G B F V Y  O S E R Q  X J W K I  N D C U A  
+X K F Y O  M H J L A  P T I B N  G C S U D  R Q V E W  
+S V R A C  T W O D N  G X Y U K  F Q B P E  J M I L H  
+
+Additional Solution
+U R H W Y  J X G N K  L A B P I  Q E M F O  C S T V D  
+Q G L C M  U A B E W  N J K D T  Y I P S V  O R X H F  
+N J V K P  I C S Q H  U W M O F  R X D T G  L Y A B E  
+E D I T B  P L M F O  Y R S X V  U W C A H  G K N J Q  
+A X S O F  R D Y T V  Q C G E H  L N K J B  U W M I P  
+
+C A U M X  F Q P W J  V E D I G  K R O Y N  B T H S L  
+L Q W N V  C K R U B  A M H J Y  S P I G T  E X D F O  
+J E G B R  L T A Y I  K O P S X  D U F H Q  M V W C N  
+P F K D T  H S V O G  W B N Q U  C M E X L  Y J R A I  
+H O Y I S  X E N M D  F L R T C  W V J B A  Q G P K U  
+
+B C Q L J  Y N W A F  M U V G P  I T R E X  H O K D S  
+W N M V K  D J Q C R  I H L F E  P S Y O U  A B G X T  
+F I X G D  K P E H T  R Y O C S  A B Q L M  V N U W J  
+R P T U A  O V L S M  B N X W D  J G H C K  I E F Q Y  
+O Y E S H  B G X I U  T Q A K J  N D V W F  P C L R M  
+
+M L B R N  W Y C J E  S V U H A  T F G D P  X I Q O K  
+K U C Q E  N O D R L  J I T M B  H Y X V W  F A S P G  
+D T J P I  V M U G S  X K F Y O  B A L Q C  W H E N R  
+Y S A F G  Q I H K X  D P C N W  E O U R J  T L B M V  
+V H O X W  A F T B P  E G Q L R  M K N I S  D U J Y C  
+
+I B N J U  E R K P Q  C D W A L  V H T M Y  S F O G X  
+G W D E Q  S U I X C  H F J V M  O L A N R  K P Y T B  
+T M P H L  G B F V Y  O S E R Q  X J W K I  N D C U A  
+X K F Y O  M H J L A  P T I B N  G C S U D  R Q V E W  
+S V R A C  T W O D N  G X Y U K  F Q B P E  J M I L H  
+
+alpha_12.txt
+No Solution
+alpha_10.txt
+SATISFIABLE
+O Q C E H  P D M R V  X B G Y A  N I L S U  W J T F K  
+U R L W B  Q N C J K  M V E D I  A F T H O  G P X Y S  
+M N J V K  U L B I A  Q F S W T  P D Y X G  R O H C E  
+X D A I G  E Y T F S  P N H C O  Q W K J R  B V M L U  
+F T Y P S  H X G W O  L U R J K  C B M V E  Q N A D I  
+
+Q U W C L  N G J V E  K M D B F  I A R P S  T H Y X O  
+B X N M J  C K U L Q  W E V I R  D Y O T H  F A S P G  
+K V E D A  B I R M Y  S O T H P  G J F L X  N U Q W C  
+G H S F T  D W P O X  N Q U A Y  M C E B V  J I L K R  
+I O P R Y  A S F T H  J G C X L  W U Q N K  M B V E D  
+
+L F U Q W  M B N K J  V I A E G  R P C Y D  H X O S T  
+N Y B J E  L U Q D W  T K F M S  H G X O A  V C I R P  
+C P V K D  I E O S G  B H Q R X  L T N W F  U M J A Y  
+A I T S R  F H Y X P  C L N O U  J V B K M  E D G Q W  
+H G X O M  V R A C T  D W Y P J  U S I E Q  K L F N B  
+
+J C Q U N  K M L B D  E P W G V  F X H I T  Y S R O A  
+E L K A V  G O I P F  Y C B U Q  S M W R N  X T D J H  
+R W D B I  X T H N C  A J K S M  Y O G U P  L F E V Q  
+T S F G P  J Q V Y R  O X I N H  B E D A L  C W K U M  
+Y M H X O  W A S E U  R T L F D  K Q V C J  I G P B N  
+
+P B G L U  R C X H I  F S J Q E  O K A M W  D Y N T V  
+W K R Y X  S J E A B  G D M V C  T N P F I  O Q U H L  
+V A O N Q  T P D U M  H Y X K W  E L J G C  S R B I F  
+D J I H C  Y F K G L  U A O T N  V R S Q B  P E W M X  
+S E M T F  O V W Q N  I R P L B  X H U D Y  A K C G J  
+
+Solution is unique
+alpha_11.txt
+No Solution
+alpha_4.txt
+SATISFIABLE
+B Y S O M  A U H L Q  V J T K W  G X I D C  R P N F E  
+J G C L T  B X M N V  P E R F H  S A Y U K  W O I D Q  
+U N V K F  C W G R J  Q L B D I  E O T H P  X M Y S A  
+I P D W E  K T F Y S  M O U X A  Q N B V R  H L J C G  
+H Q A R X  E P O I D  S Y C N G  J W L F M  U K B V T  
+
+L B W U N  F C S M K  T V O P E  D G Q R H  Y X A J I  
+M J H V A  U Q L B N  I C X G D  O K F Y T  P E S W R  
+K D E Q I  J V R W O  U S L Y M  X P C N A  F B G T H  
+G O T C Y  X H E D P  R Q F A B  I J S W U  K V L N M  
+S R F X P  G A Y T I  W K H J N  V L M E B  D U C Q O  
+
+C X Q M L  N F U J E  K D A W S  B I O P Y  T R H G V  
+W U B E J  Q L C V X  G R M O Y  H D N T F  S I K A P  
+N V K I S  P D B A Y  F U Q H T  R E G X W  L J O M C  
+A F G Y H  W I T O R  J B P C X  L M V K S  Q D E U N  
+P T R D O  M G K S H  L N I E V  U C J A Q  B W X Y F  
+
+F C L B U  V M W K A  N I J Q R  P Y E S G  O H T X D  
+Q W M J V  L N I U B  C A Y S F  T H X O D  E G R P K  
+E S N T D  O R X Q G  H P V U K  C B A L J  M Y F I W  
+O A X G K  H Y J P F  E M D T L  W U R I V  N C Q B S  
+Y I P H R  T S D E C  X W G B O  M F K Q N  J A V L U  
+
+V L J A B  D K Q F T  O H W M C  Y S P G E  I N U R X  
+D K O F Q  I B N C W  Y G E R P  A T U J X  V S M H L  
+T H Y S C  R E P X M  A F K I U  N V D B L  G Q W O J  
+X M I N W  Y J V G U  D T S L Q  K R H C O  A F P E B  
+R E U P G  S O A H L  B X N V J  F Q W M I  C T D K Y  
+
+Solution is unique
+alpha_5.txt
+SATISFIABLE
+Y D W V I  N P E M S  C Q G H A  L R K F U  X T J B O  
+X U Q L F  W R J V K  Y N E D I  G O T C B  A S M P H  
+B N A K J  U L Q X D  S V T O P  I H W M E  G F R C Y  
+R C M E H  B G T Y O  W K L F X  P V J A S  Q U D N I  
+G P T S O  A H C F I  U J M B R  Q N D Y X  L V E K W  
+
+C Q N U L  Y B W K J  M E D R G  A F I P H  T X S O V  
+W K B J M  Q U L C N  V A I P F  E T S X O  H D G Y R  
+H G E D V  M A R P X  T B O S K  U Y Q W C  N L I J F  
+A R I F P  V T O S H  N Y U X Q  J L G K D  B C W M E  
+T Y S O X  E D I G F  L C W J H  B M N V R  U Q K A P  
+
+M B C Q W  J N U E V  K F A T Y  D G R S I  O H P L X  
+L J K N E  C M A R G  Q D B V S  F X H O P  I Y U W T  
+U I R A T  L Y S D B  H X P G O  C Q M J W  V K F E N  
+V F D G S  O Q X H P  E I J U W  N K L T Y  M B A R C  
+P H O X Y  I F K T W  R L N C M  V E B U A  J G Q S D  
+
+N L U C B  K W M Q E  D G V Y J  R P X H F  S I O T A  
+Q W J I D  G C B U Y  F S K E N  O A V L T  R P H X M  
+K M F P A  T S V J R  X O H W U  Y D E I Q  C N L G B  
+S E H Y G  D X P O L  A R C I T  W B U N M  F J V Q K  
+O V X T R  H I F N A  B P Q M L  K S C G J  E W Y D U  
+
+J A V B U  R K Y L T  O W S Q C  M I F D N  P E X H G  
+E T L M Q  P J H B C  I U Y K V  X W A R G  D O N F S  
+I O G R C  F E N A U  P H X L D  S J Y B K  W M T V Q  
+D S Y W N  X O G I M  J T F A E  H C P Q V  K R B U L  
+F X P H K  S V D W Q  G M R N B  T U O E L  Y A C I J  
+
+Solution is unique
+alpha_7.txt
+SATISFIABLE
+N A U C D  F H S E M  G P X L J  O B Q V K  I W Y T R  
+Q L B W M  J V K D I  C E A H Y  T U R S X  G P F O N  
+J X V E P  U C Q W R  T M O B N  G L I F Y  S K A D H  
+K I G T S  X P Y N O  U Q F W R  E J D H A  C L V B M  
+R F H Y O  L B A G T  S V K D I  C W M N P  U X Q J E  
+
+U Q C L B  W N V A K  J D E I G  R F P T S  H M X Y O  
+W N K V E  C U L M J  Q B P Y O  H G X A D  R I S F T  
+D J A I G  B R P O Y  H F T S X  U Q L C M  W N E V K  
+F R T M Y  E D X H S  L U C N W  J V K I O  Q A B P G  
+P H S O X  G I T Q F  M K R V A  B Y W E N  L J U C D  
+
+L U Q B W  M J F V N  K I D E P  A R C G T  Y O H S X  
+C M X J V  Q L U I B  W Y S F T  P N O K H  D E R G A  
+I D Y G F  K W O P A  R H U X Q  V S B L E  M T J N C  
+T O R H N  S E G X C  V L J A B  M I Y D U  K Q P W F  
+E S P K A  T Y D R H  N G M O C  W X J Q F  B U L I V  
+
+B V L U J  N M C F W  E A Q K D  Y T S R G  O H I X P  
+M C D S T  V Q B U G  F W L J H  X O N P I  A R K E Y  
+A P F N Q  D K J Y X  B O I R V  L E H U C  T G W M S  
+H Y O R K  A T I L E  P X G C S  D M V W J  F B N Q U  
+G W E X I  H O R S P  Y T N U M  K A F B Q  V D C L J  
+
+V G W Q H  Y A N K L  X J B M F  S P T O R  E C D U I  
+Y K N P U  O F M T D  A C V Q L  I H E J W  X S G R B  
+O T I F C  R G H B Q  D S W P E  N K U X V  J Y M A L  
+S E J A L  P X W C U  I R Y T K  F D G M B  N V O H Q  
+X B M D R  I S E J V  O N H G U  Q C A Y L  P F T K W  
+
+Solution is unique
+alpha_6.txt
+SATISFIABLE
+N G H W T  F R L K V  U P M J E  O D A B I  Q C X Y S  
+U L C B M  J N E D A  I V K G W  S X Q Y T  O P R F H  
+Q J V A K  U C B W M  H S Y X O  R P N E F  D L I G T  
+R E X Y O  S Q P I T  B F A L D  U W H C G  M J N V K  
+I F P D S  Y G X H O  C Q T N R  L M J V K  U B W E A  
+
+W U B Q N  M J V A K  E D I F G  Y R P T H  S X O L C  
+C M Y K L  Q B W N E  J A P T H  V U S X O  I D F R G  
+J V E I A  C L D G F  W X R O S  K Q B M N  P U T H Y  
+G D R T P  H S O U X  V C Q Y L  W J I F A  B E M K N  
+F S O X H  I T R P Y  N M B K U  D C E G L  W V Q A J  
+
+L Q U M B  W K C J N  X G E P A  I V D R Y  F T H S O  
+V W N J D  L M Q E B  R T C H F  A G O S U  K I Y P X  
+E C A R Y  G U F V P  K O S I Q  B L T H X  N W J M D  
+K P F H I  D X T O S  L U W V Y  Q N C J M  E A G B R  
+T X S O G  A I H Y R  M N J D B  E K F W P  C Q L U V  
+
+B N Q U X  V E M C G  D L F W J  P A R O S  H Y K T I  
+M K L C F  B D N R Q  A E U S V  H T Y I J  G O P X W  
+A R D V E  T Y I L U  Q H O C P  G F X K W  J S B N M  
+P Y I S W  K O J X H  T B G R N  M E U L C  V F A D Q  
+H O T G J  P F A S W  Y K X M I  N B V Q D  L R U C E  
+
+Y B W L U  N P G T C  S J D Q K  X I M A V  R H E O F  
+X A J N Q  E W U F D  O Y H B M  C S K P R  T G V I L  
+D H G F C  R A K B J  P I V E X  T O L N Q  Y M S W U  
+S T K E R  O V Y M I  F W L A C  J H G U B  X N D Q P  
+O I M P V  X H S Q L  G R N U T  F Y W D E  A K C J B  
+
+Solution is unique
+alpha_2.txt
+SATISFIABLE
+G I L S D  O B U V H  W Q Y C F  N K T X M  E A R J P  
+U Q B C M  L F N W K  J V E D I  A G R P Y  O H S T X  
+J N V K E  Q C D A G  P R T X U  H S F L O  B Y M I W  
+A W R F T  J E P X Y  H G S M O  B D V I C  U L Q N K  
+H P Y X O  R I M T S  A L B K N  U Q W J E  C V D G F  
+
+Q U W H B  M L J K V  C E N A D  I R Y S P  G F T X O  
+M K N J A  B Q C E W  U I L V R  X F G O T  P D H Y S  
+E D G Y F  T N A S P  Q B W O X  C U L M H  J K V R I  
+V L I O R  G H X F D  M Y P S T  Q B N K J  A E W C U  
+S X C T P  I Y R U O  K J F G H  W V A E D  N Q B L M  
+
+C E U Q L  W J V B N  D M K I A  R P O G F  H T X S Y  
+B A K N I  U D Q C L  E S O H G  Y X M T W  V J P F R  
+D R H M Y  E A I O F  T U X P B  S C J Q V  L G K W N  
+X J O P V  K G S M T  Y W R F Q  L N U H B  D C I E A  
+F T S G W  H P Y R X  N C V J L  E I D A K  Q M O U B  
+
+N C Q R J  D M T L E  V F I W Y  O H S B X  K P U A G  
+L M D U K  C V G Q A  S X J B P  F T E W I  R N Y O H  
+I B A V H  S O W J U  G K D N E  M L P Y R  T X F Q C  
+O G P E X  N K F Y I  R T H L M  V A C U Q  W S J B D  
+T Y F W S  P X B H R  O A U Q C  D J K N G  M I L V E  
+
+W F J L U  Y T K N B  I D G E S  P O H V A  X R C M Q  
+K V M B Q  F U O I C  L P A R J  G E X D S  Y W N H T  
+Y H E A C  X R L D J  B N Q T W  K M I F U  S O G P V  
+R O T I G  V S E P Q  X H M Y K  J W B C N  F U A D L  
+P S X D N  A W H G M  F O C U V  T Y Q R L  I B E K J  
+
+Solution is unique
+alpha_3.txt
+SATISFIABLE
+O P J S X  E H R N D  T F Q M U  K V B A L  G Y C I W  
+F Q U L C  T S B W J  A V E G I  M D N Y O  X P H R K  
+I B W M K  Y C Q U L  J O S X H  E G P T R  N V A F D  
+N E A T Y  V G K X F  P B R C D  J I U H W  Q L O M S  
+D H G V R  P A I M O  K L W N Y  Q C S X F  T U B J E  
+
+Q U B C W  K L J V E  M A I D G  P R Y O N  H F S X T  
+M V K N J  Q B U C W  L E H R F  X T D G S  A O Y P I  
+E D I G F  N R A P S  U Y O T X  L B H W J  V C M K Q  
+T R L P A  D O X Y H  Q C V W S  F M E K I  J G N U B  
+Y X O H S  G M F I T  B N P K J  U Q C V A  L W E D R  
+
+U W Q B G  C J D H M  N K A F V  O E T P Y  R I L S X  
+L C M K V  U N W A G  E J Y I O  B X R S Q  F T D H P  
+J N E D I  L Q V R P  W U X S T  A H M F C  Y B K G O  
+P A R F O  S E Y T X  D H C Q B  G J I L K  U N V W M  
+S Y T X H  B I O F K  R G L P M  V N W U D  E A Q C J  
+
+R L C U B  M W E Q N  I P J Y K  S A F D H  O X T V G  
+W M N J E  A K C L R  S X D V Q  I O G B T  P H F Y U  
+X K V I P  H D G J B  O T F U A  C Y Q N M  W S R E L  
+A G S Y D  I F T O V  H M B L R  W U X E P  C K J Q N  
+H O F Q T  X Y P S U  C W G E N  R L K J V  M D I B A  
+
+B I D W Q  J V N G C  F S T O E  H P L M U  K R X A Y  
+C F P A U  R T M E Q  X D N B L  Y K V I G  S J W O H  
+G T X O N  W P H B Y  V Q K J C  D S A R E  I M U L F  
+V S Y R M  O X L K A  G I U H W  N F J Q B  D E P T C  
+K J H E L  F U S D I  Y R M A P  T W O C X  B Q G N V  
+
+Solution is unique
+alpha_1.txt
+SATISFIABLE
+B U I K G  Q W M D C  F N O P R  T L V H J  S A Y X E  
+Q C L W M  F J U B N  V K E A Y  G D S O X  H T R P I  
+R E X S A  K Y V O P  T H J D I  Q U F C W  B G M N L  
+J V H P T  E X A I R  U Q S L G  B M N K Y  C D F W O  
+N D F Y O  H L G S T  C B M X W  I R E A P  U K Q V J  
+
+U Q C B L  W M N J K  D E I O A  V T P Y R  G X H S F  
+W N K E D  U C B A S  Q T L G F  H J I X O  R V P M Y  
+A T V O F  D Q L E G  H P Y R X  M N K S B  I C W J U  
+M I P H Y  V R O X F  B J W K S  D C U G Q  T N L E A  
+G S R J X  Y T P H I  M C N U V  E F W L A  K Q O D B  
+
+O W U F Q  C V J M E  N D X B P  K I Y R G  A L S H T  
+C B J L N  X K F U Y  W M G I H  S A T E D  P O V Q R  
+I M E V H  B D Q W A  K U R S T  L P O N F  J Y C G X  
+T A Y G K  N P S R L  O V C F J  U W X Q H  D E B I M  
+P X D R S  I G H T O  A L Q Y E  J B C M V  N F U K W  
+
+L K Q U C  M E X G W  J S V T N  P O B F I  Y R D A H  
+D O W M J  L F T P U  I A H E K  R Y Q V S  X B N C G  
+E G A T P  J N K Q H  R Y F M B  C X D W L  V U I O S  
+Y R N X V  S B I C D  G W U Q O  A K H T M  L J E F P  
+H F S I B  A O R Y V  P X D C L  N G J U E  W M K T Q  
+
+K J B C W  G A E N Q  L O P H M  Y S R D T  F I X U V  
+V Y O Q R  P I W K B  X G A N C  F H M J U  E S T L D  
+F P G D E  T H Y V M  S R K J U  X Q L I C  O W A B N  
+S H M A I  R U C L X  E F T W D  O V G B N  Q P J Y K  
+X L T N U  O S D F J  Y I B V Q  W E A P K  M H G R C  
+
+Solution is unique
+alpha_0.txt
+SATISFIABLE
+P K D L B  G H U E W  J A O F I  R T N Q X  M C Y V S  
+U Q C W M  L B N J K  V E G D P  A I H Y S  F X T R O  
+N J V A I  Q D C R X  S U L T Y  B G O F M  K W P H E  
+E H T F X  Y P M S O  Q C N R B  L U W V K  J D A I G  
+G Y R S O  V A I F T  M W K H X  E J C D P  U L Q N B  
+
+Y U Q C F  M N B K J  L I E X A  G D P R T  W V S O H  
+L B M N H  U W Q C E  K J F G T  I A V S O  D P R Y X  
+W V K J E  D I H G R  Y O S P N  Q B M X C  A U L T F  
+A I G R P  S T X O Y  U Q D V W  N L F K H  E B M C J  
+D T X O S  F L V A P  C H B M R  J W Y U E  Q N K G I  
+
+Q M U K N  W J L D C  E V A Y G  F H R T I  B S O X P  
+B D A I J  N U E M G  R L Q C F  P S X O W  T H V K Y  
+T F S X L  R V A Y H  B P I U O  M K E N D  C G J Q W  
+O C W P G  K Q F T I  N D X S H  V Y L J B  R M U E A  
+V R E H Y  P X O B S  T M J W K  U Q A C G  L I F D N  
+
+C G L U Q  T E W V N  D B M O J  H P S I R  Y F X A K  
+I W N V D  C G K U M  P R Y Q E  X F J L A  S O H B T  
+M E P T A  J O R X L  F N H K S  D V B W Y  I Q G U C  
+F S O B K  H Y D P A  G X U I C  T M Q E N  V R W J L  
+J X H Y R  B F S I Q  A T W L V  O C K G U  N E D P M  
+
+K L B Q U  X M J N F  W G T E D  Y O I H V  P A C S R  
+R N J M C  E K G H U  I S V A Q  W X T P F  O Y B L D  
+H A F E W  I S T L D  O Y P J U  C R G B Q  X K N M V  
+S O Y G V  A R P Q B  X F C N L  K E D M J  H T I W U  
+X P I D T  O C Y W V  H K R B M  S N U A L  G J E F Q  
+
+Additional Solution
+P K D L B  G H U E W  J A O F I  R T N Q X  M C Y V S  
+U Q C W M  L B N J K  V E G D P  A I H Y S  F X T R O  
+N J V A I  Q D C R X  S U L T Y  B G O F M  K W P H E  
+E H T F X  Y P M S O  Q C N R B  L U W V K  J D A I G  
+G Y R S O  V A I F T  M W K H X  E J C D P  U L Q N B  
+
+Y V Q C F  M N B K J  L I E X A  G D P R T  W U S O H  
+L B M N H  U W Q C E  K J F G T  I A V S O  D P R Y X  
+W U K J E  D I H G R  Y O S P N  Q B M X C  A V L T F  
+A I G R P  S T X O Y  U Q D V W  N L F K H  E B M C J  
+D T X O S  F L V A P  C H B M R  J W Y U E  Q N K G I  
+
+Q M U K N  W J L D C  E V A Y G  F H R T I  B S O X P  
+B D A I J  N U E M G  R L Q C F  P S X O W  T H V K Y  
+T F S X L  R V A Y H  B P I U O  M K E N D  C G J Q W  
+O C W P G  K Q F T I  N D X S H  V Y L J B  R M U E A  
+V R E H Y  P X O B S  T M J W K  U Q A C G  L I F D N  
+
+C G L U Q  T E W V N  D B M O J  H P S I R  Y F X A K  
+I W N V D  C G K U M  P R Y Q E  X F J L A  S O H B T  
+M E P T A  J O R X L  F N H K S  D V B W Y  I Q G U C  
+F S O B K  H Y D P A  G X U I C  T M Q E N  V R W J L  
+J X H Y R  B F S I Q  A T W L V  O C K G U  N E D P M  
+
+K L B Q U  X M J N F  W G T E D  Y O I H V  P A C S R  
+R N J M C  E K G H U  I S V A Q  W X T P F  O Y B L D  
+H A F E W  I S T L D  O Y P J U  C R G B Q  X K N M V  
+S O Y G V  A R P Q B  X F C N L  K E D M J  H T I W U  
+X P I D T  O C Y W V  H K R B M  S N U A L  G J E F Q  
+
+alpha_8.txt
+SATISFIABLE
+F V I P G  C J X D H  W O B U T  S R K Y L  Q E A M N  
+C U L B W  K M N V E  J Q A X I  G F P D H  S R T O Y  
+Q M J D K  U L B W A  C R G S Y  V N O E T  X I H F P  
+N E A R T  F Q O Y S  L M V P H  U B X C I  W J K D G  
+H Y S X O  I G R P T  F N E D K  Q W J A M  B U C L V  
+
+L Q U W J  B N M K V  D E I G A  R C F T P  H Y S X O  
+B C O M N  Q E U J W  V L S R X  K D A H Y  I P F G T  
+K D E I S  A C G R F  U T Y H P  O Q V L X  M B W N J  
+V A G F P  X S T H Y  K C O Q B  W M I J N  R L D E U  
+R T H Y X  D I P O L  M W N J F  E U S B G  C Q V K A  
+
+A B Q C V  E K D M J  N I U F G  P T R S O  Y X L H W  
+W L N U E  G B Q C I  R V D K O  Y X H F J  T A M P S  
+J I P T D  L V A U R  S H X Y W  N K G M B  F O Q C E  
+M G F O H  S W Y T X  E J P A C  L V U Q D  N K R I B  
+S R X K Y  O H F N P  T B M L Q  A E C I W  U G J V D  
+
+E W C Q L  J U V B D  A K R M N  I H Y O F  G T P S X  
+D K M V U  W A H X N  P Y J I E  B S T G Q  L C O R F  
+O H Y J B  T P S G Q  X F L W V  C A N R E  D M I U K  
+G X R N I  Y F K L O  Q U T C S  M J D P V  E W B A H  
+P S T A F  M R E I C  B G H O D  X L W U K  J V N Y Q  
+
+I N W G Q  R D L E U  Y A C V J  F P B K S  O H X T M  
+T J B H A  V Y I S K  G X W E M  D O L N C  P F U Q R  
+Y O V S R  P T C Q G  H D F B U  J I M X A  K N E W L  
+X P K L M  H O W F B  I S Q N R  T Y E V U  A D G J C  
+U F D E C  N X J A M  O P K T L  H G Q W R  V S Y B I  
+
+Solution is unique
+alpha_9.txt
+SATISFIABLE
+G E P F D  T U Q V Y  X N L H O  R W A B C  I M J S K  
+Q Y C U L  B W M J K  V E D T A  N I F P S  R G H O X  
+B J M W V  L C E N D  U Q I R S  H X G K O  T F A Y P  
+N A O S R  G H X I P  C B K J F  T Y M L E  Q V W D U  
+K X I T H  S A R F O  M P W G Y  Q U D V J  B L E N C  
+
+U Q L C B  W M P K N  J D E A I  V R H G X  S Y O T F  
+W V N M K  Q L H B U  G R T S X  F C Y O P  J E D A I  
+E G F A P  I X T R C  Y O V Q W  S J B N D  H K U L M  
+I S D R Y  J E G O A  K H N F P  L T Q U M  V W X C B  
+T H J X O  Y V D S F  B M U C L  E A W I K  P Q G R N  
+
+L U Q B W  M S N D J  A V P K G  O E C T R  Y I F X H  
+C O V N X  K Q U L B  E J H W R  Y F S D I  G T P M A  
+J T K E I  A R V W G  N F Y O M  U P X H B  C D L Q S  
+D M R P A  C F O Y H  S T X I B  K N L Q G  U J V W E  
+H F Y G S  E P I T X  Q L C U D  W M J A V  O B N K R  
+
+M L U Q F  N B W E V  I C J P T  X K R Y H  D A S G O  
+V C H J N  U K L Q I  O A S M E  G D T F W  X R B P Y  
+A B W K E  R J C X T  L Y G D V  M O P S U  F N I H Q  
+R I S O T  D G Y P M  F U Q X H  A B V E N  L C K J W  
+P D X Y G  F O A H S  R W B N K  C L I J Q  E U M V T  
+
+F W B D M  P N J U Q  H G R V C  I S K X Y  A O T E L  
+Y N E V U  H D S A R  W I F L Q  P G O M T  K X C B J  
+S K A H C  V I F M W  T X O B J  D Q E R L  N P Y U G  
+X P T I Q  O Y B G L  D K M E U  J H N C A  W S R F V  
+O R G L J  X T K C E  P S A Y N  B V U W F  M H Q I D  
+
+Solution is unique
+alpha_20.txt
+No Solution
+alpha_21.txt
+SATISFIABLE
+L G W M Y  E H S U N  F V R D T  C B P J I  O K Q A X  
+B H U A C  L T R P M  G S Q I J  E K X O D  W F V N Y  
+P O J E V  F Q Y C K  N A M X H  L T S G W  R B U D I  
+F Q T N K  I B G X D  U O L W C  A R M Y V  J S H P E  
+D X S R I  J A V W O  B E P Y K  N H U F Q  L M T G C  
+
+H L P F M  Q S A G C  E N V K X  T J D W O  I Y B R U  
+W A B X T  N U J Y R  P L O C I  V Q E K F  S D M H G  
+S C K G J  O L B V E  D H T U R  P M Y I A  F Q N X W  
+R E Q V O  W D I K F  Y B J M S  U X N H G  P L C T A  
+Y U D I N  M P X H T  A W G Q F  R L C B S  V E K J O  
+
+K Y L J F  B O T R G  S X D A W  M C I N U  H V E Q P  
+N B E W S  A K L M X  T R U V Q  Y F G P H  C J O I D  
+A T C O X  Y E U J V  H M I P L  Q D R S B  N W G F K  
+U D G Q R  H I P N W  C K F J Y  O E A V T  M X S L B  
+V M I H P  C F D Q S  O G E N B  K W L X J  U T A Y R  
+
+M R Y L Q  P X F A H  J U N S G  I O V E K  B C D W T  
+T F O C U  V W M E I  X Y A L D  H G B Q N  K R P S J  
+G S V D W  R C O T Q  K I B E M  J A F L P  X N Y U H  
+E J H K B  G Y N D L  R T C F P  X S W U M  Q A I O V  
+X I N P A  U J K S B  V Q W H O  D Y T C R  E G L M F  
+
+I K M U E  X G W O J  L C S B A  F N H T Y  D P R V Q  
+C P F B D  S M H L Y  I J X R V  G U Q A E  T O W K N  
+O N X Y L  D V Q I A  M F H T E  W P K R C  G U J B S  
+J W A S H  T R C F U  Q P K G N  B V O D L  Y I X E M  
+Q V R T G  K N E B P  W D Y O U  S I J M X  A H F C L  
+
+Additional Solution
+L G W M Y  E H S U N  F V R D T  C B P J I  O K Q A X  
+B H U A C  L T R P M  G S Q I J  E K X O D  W F V N Y  
+P O J E V  F Q Y C K  N A M X H  L T S G W  R B U D I  
+F Q T N K  I B G X D  U O L W C  A R M Y V  J S H P E  
+D X S R I  J A V W O  B E P Y K  N H U F Q  L M T G C  
+
+H L P F M  Q S A G C  E N V K X  T J D W O  I Y B R U  
+W A B X T  N U J Y R  P L O C I  V Q E K F  S D M H G  
+S C K G J  O L B V E  D H T U R  P M Y I A  F Q N X W  
+R E Q V O  W D I K F  Y B J M S  U X N H G  P L C T A  
+Y U D I N  M P X H T  A W G Q F  R L C B S  V E K J O  
+
+K Y L J F  B O T R G  S X D A W  M C I N U  H V E Q P  
+N B E W S  A K L M X  T R U V Q  Y F G P H  C J O I D  
+A T C O X  Y E U J V  H M I P L  Q D R S B  N W G F K  
+U D G Q R  H I P N W  C K F J Y  O E A V T  M X S L B  
+V M I H P  C F D Q S  O G E N B  K W L X J  U T A Y R  
+
+M R Y L B  P X F A H  J U N S G  I O V E K  Q C D W T  
+T F O C U  V W M E I  X Y A L D  H G B Q N  K R P S J  
+G S V D W  R C O T Q  K I B E M  J A F L P  X N Y U H  
+E J H K Q  G Y N D L  R T C F P  X S W U M  B A I O V  
+X I N P A  U J K S B  V Q W H O  D Y T C R  E G L M F  
+
+I K M U E  X G W O J  L C S B A  F N H T Y  D P R V Q  
+C P F B D  S M H L Y  I J X R V  G U Q A E  T O W K N  
+O N X Y L  D V Q I A  M F H T E  W P K R C  G U J B S  
+J W A S H  T R C F U  Q P K G N  B V O D L  Y I X E M  
+Q V R T G  K N E B P  W D Y O U  S I J M X  A H F C L  
+
+alpha_23.txt
+SATISFIABLE
+Y K X Q P  N E H O I  B J T W M  U C S V G  R D A L F  
+L B O S F  U Y R T M  D A C G V  W P N Q J  K I E X H  
+M R T V J  L G A P D  E S K X Q  B F H I Y  C O U W N  
+U C I G H  B K X Q W  N O Y L F  R D A T E  M V J S P  
+D E A N W  S V J C F  U R H P I  K L O M X  Y G T Q B  
+
+B L R O U  A M F I T  S Y G E X  J V K P W  D C H N Q  
+J A Y M K  O L U H S  P V Q R N  I T D F C  X E B G W  
+S V N T G  Y C K W Q  I H D O B  L U E X M  J A F P R  
+E H W F Q  J P D X G  C L U T A  O N Y B R  I M S V K  
+X P D C I  R B E N V  W F M J K  S Q G H A  T L Y U O  
+
+O Y L U A  I J G B C  M Q P S T  V K X N H  W F D R E  
+C M B R E  T Q O A H  X U V Y G  F J I W D  S N P K L  
+K F S W V  X D L E Y  R N J I O  Q A T U P  G B C H M  
+T G H P N  V F S U R  L K A D W  E Y M C B  O X Q I J  
+Q D J I X  P W M K N  F B E C H  G S R L O  A Y V T U  
+
+A U M Y T  G N B S L  Q P F H J  C R V D K  E W X O I  
+P J V B L  E O T M A  Y X S U R  N W F G I  Q H K C D  
+F S Q X D  W R I J K  G E B N C  H O L A T  P U M Y V  
+G N K E O  C H Q D P  A W I V L  X M J Y U  F S R B T  
+W I C H R  F X Y V U  T M O K D  P E B S Q  N J L A G  
+
+R T F A Y  H S P G X  J I N Q E  D B U O L  V K W M C  
+V Q U J M  K I C Y B  O D L A P  T G W E S  H R N F X  
+N X G K S  M T V R E  H C W B U  Y I Q J F  L P O D A  
+I W E L C  D U N F O  K T X M Y  A H P R V  B Q G J S  
+H O P D B  Q A W L J  V G R F S  M X C K N  U T I E Y  
+
+Additional Solution
+Y K X Q P  N E H O I  B J T W M  U C S V G  R D A L F  
+L B O S F  U Y R T M  D A C G V  W P N Q J  K I E X H  
+M R T V J  L G A P D  E S K X Q  B F H I Y  C O U W N  
+U C I G H  B K X Q W  N O Y L F  R D A T E  M V J S P  
+D E A N W  S V J C F  U R H P I  K L O M X  Y G T Q B  
+
+B L R O U  A M F I T  S Y G E X  J V K P W  D C H N Q  
+J A Y M K  O L U H S  P V Q R N  I T D F C  X E B G W  
+S V N T G  Y C K W Q  I H D O B  L U E X M  J A F P R  
+E H W F Q  J P D X G  C L U T A  O N Y B R  I M S V K  
+X P D C I  R B E N V  W F M J K  S Q G H A  T L Y U O  
+
+O Y L U A  I J G B C  M Q P S T  V K X N H  W F D R E  
+C M B R E  T Q O A H  X U V Y G  F J I W D  S N P K L  
+K F S W V  X D L E Y  R N J I O  Q A T U P  G B C H M  
+T G H P N  V F S U R  L K A D W  E Y M C B  O X Q I J  
+Q D J I X  P W M K N  F B E C H  G S R L O  A Y V T U  
+
+A U M Y T  G N B S L  Q P F H J  C R V D K  E W X O I  
+P J V B L  E O Y M A  T X S U R  N W F G I  Q H K C D  
+F S Q X D  W R I J K  G E B N C  H O L A T  P U M Y V  
+G N K E O  C H Q D P  A W I V L  X M J Y U  F S R B T  
+W I C H R  F X T V U  Y M O K D  P E B S Q  N J L A G  
+
+R T F A Y  H S P G X  J I N Q E  D B U O L  V K W M C  
+V Q U J M  K I C Y B  O D L A P  T G W E S  H R N F X  
+N X G K S  M T V R E  H C W B U  Y I Q J F  L P O D A  
+I W E L C  D U N F O  K T X M Y  A H P R V  B Q G J S  
+H O P D B  Q A W L J  V G R F S  M X C K N  U T I E Y  
+
+alpha_22.txt
+SATISFIABLE
+E B O F V  M T Y Q K  H P N S L  D C I G R  A X U J W  
+N M R A P  L O F C G  B V Q I X  W U J S E  Y T D H K  
+U S C G D  A B R P J  W T K E Y  M Q N X H  V O L I F  
+T X L K J  H S E W I  C R D U O  F A P V Y  N G M B Q  
+Y W H I Q  U N V D X  A M G J F  L O B T K  S E R P C  
+
+L Y U O F  B M A T P  X G R V S  C E K N I  W H J Q D  
+M A B S C  R L U Y F  K O T N P  H J D Q W  E V G X I  
+R P G J X  V K N E Q  I W H D C  Y L O U A  M B F S T  
+V K N W T  C G I H D  E A M Q J  B S F P X  R L Y U O  
+I D E Q H  X W J S O  L Y B F U  R T G M V  P C N K A  
+
+A L Y U O  D F X B R  T C S M V  P W E K G  H Q I N J  
+B F M R S  Y U L O A  P N I H Q  T V X D J  K W E C G  
+P C V X G  K H S N E  F J U L W  Q B Y I M  O D A T R  
+K T Q E N  P I M J W  R D Y X G  U H A O C  L S B F V  
+D J I H W  T C Q G V  O K A B E  S R L F N  U M P Y X  
+
+F U T D L  S J O M Y  G B C R K  V X W H P  I A Q E N  
+O R P Y M  F E B L U  S Q X A N  I G C J T  D K V W H  
+S I K C B  W Q D X N  V L O Y H  E F M A U  J R T G P  
+Q G X V A  I R T K H  J E W P D  O N S Y L  F U C M B  
+J H W N E  G A P V C  U I F T M  K D R B Q  X Y O L S  
+
+W O F L Y  Q V C U B  M S J K I  X P T R D  G N H A E  
+C V S B R  E Y G I M  N H P W A  J K Q L O  T F X D U  
+X Q J M U  N D K A T  Y F V O B  G I H E S  C P W R L  
+G N D P K  J X H R L  Q U E C T  A Y V W F  B I S O M  
+H E A T I  O P W F S  D X L G R  N M U C B  Q J K V Y  
+
+Additional Solution
+E B O F V  M T Y Q K  H P N S L  D C I G R  A X U J W  
+N M R A P  L O F C G  B V Q I X  W U J S E  Y T D H K  
+U S C G D  A B R P J  W T K E Y  M Q N X H  V O L I F  
+T X L K J  H S E W I  C R D U O  F A P V Y  N G M B Q  
+Y W H I Q  U N V D X  A M G J F  L O B T K  S E R P C  
+
+L Y U O F  B M A T P  X G R V S  C E K N I  W H J Q D  
+M A B S C  R L U Y F  O K T N P  H J D Q W  E V G X I  
+R P G J X  V K N E Q  I W H D C  Y L O U A  M B F S T  
+V K N W T  C G I H D  E A M Q J  B S F P X  R L Y U O  
+I D E Q H  X W J S O  L Y B F U  R T G M V  P C N K A  
+
+A L Y U O  D F X B R  T C S M V  P W E K G  H Q I N J  
+B F M R S  Y U L O A  P N I H Q  T V X D J  K W E C G  
+P C V X G  K H S N E  F J U L W  Q B Y I M  O D A T R  
+K T Q E N  P I M J W  R D Y X G  U H A O C  L S B F V  
+D J I H W  T C Q G V  K O A B E  S R L F N  U M P Y X  
+
+F U T D L  S J O M Y  G B C R K  V X W H P  I A Q E N  
+O R P Y M  F E B L U  S Q X A N  I G C J T  D K V W H  
+S I K C B  W Q D X N  V L O Y H  E F M A U  J R T G P  
+Q G X V A  I R T K H  J E W P D  O N S Y L  F U C M B  
+J H W N E  G A P V C  U I F T M  K D R B Q  X Y O L S  
+
+W O F L Y  Q V C U B  M S J K I  X P T R D  G N H A E  
+C V S B R  E Y G I M  N H P W A  J K Q L O  T F X D U  
+X Q J M U  N D K A T  Y F V O B  G I H E S  C P W R L  
+G N D P K  J X H R L  Q U E C T  A Y V W F  B I S O M  
+H E A T I  O P W F S  D X L G R  N M U C B  Q J K V Y  
+
+alpha_26.txt
+SATISFIABLE
+F L U O H  N A D R S  E T J B V  P Q C W I  M K X G Y  
+Y X Q E V  F M T U W  P S G R I  N B K H D  C L A O J  
+K B M S C  O G H V Q  N U Y W L  J A F E X  R I P T D  
+P D W A J  B E K I C  M Q F O X  T Y L R G  H S U N V  
+N G R T I  J Y L X P  H A C K D  U O M S V  Q E W B F  
+
+H Y A L U  M R O C I  K B T P S  X N V G E  J F D W Q  
+M S N R T  A X B F H  U G Q E O  L C D J W  P Y I V K  
+V E G F D  S W Q Y U  L M R X J  I T O K P  N B H A C  
+O K P Q X  L N V J D  C W H I F  S U Y B A  G M E R T  
+J W C I B  K T P E G  V N A D Y  M R H Q F  U O L X S  
+
+A P Y N Q  U I W T V  B D S F G  K X R M O  L J C H E  
+L U E C M  Y O X A F  T V K N Q  W H J P B  D R S I G  
+S O X G K  R C J H L  W P E U M  Y D I V T  B N F Q A  
+T V J D W  G Q N B M  Y R I A H  E F S C L  X U K P O  
+B I F H R  D P S K E  X L O J C  A G Q U N  Y T V M W  
+
+U F L Y O  P S A M K  G C B T R  V W X I H  E D Q J N  
+R T H B P  E D U L O  S F X Y W  Q K G N J  A V M C I  
+C A V J E  W F Y G T  Q I N H P  D M U L R  S X O K B  
+X M I K N  H V C Q R  D J U L A  O E B F S  W G T Y P  
+G Q D W S  X J I N B  O K M V E  C P A T Y  F H R L U  
+
+W N B X L  C K R P Y  F O D G T  H I E A U  V Q J S M  
+D R T P Y  Q H G S A  J E L M U  B V W O K  I C N F X  
+Q C K V F  I U E O X  A H W S B  R J N Y M  T P G D L  
+I J S U G  V B M W N  R X P C K  F L T D Q  O A Y E H  
+E H O M A  T L F D J  I Y V Q N  G S P X C  K W B U R  
+
+Additional Solution
+F L U O H  N A D R S  E T J B V  P Q C W I  M K X G Y  
+Y X Q E V  F M T U W  P S G R I  N B K H D  C L A O J  
+K B M S C  O H G V Q  N U Y W L  J A F E X  R I P T D  
+P D W A J  B E K I C  M Q F O X  T Y L R G  H S U N V  
+N G R T I  J Y L X P  H A C K D  U O M S V  Q E W B F  
+
+H Y A L U  M R O C I  K B T P S  X N V G E  J F D W Q  
+M S N R T  A X B F H  U G Q E O  L C D J W  P Y I V K  
+V E G F D  S W Q Y U  L M R X J  I T O K P  N B H A C  
+O K P Q X  L N V J D  C W H I F  S U Y B A  G M E R T  
+J W C I B  K T P E G  V N A D Y  M R H Q F  U O L X S  
+
+A P Y N Q  U I W T V  B D S F G  K X R M O  L J C H E  
+L U E C M  Y O X A F  T V K N Q  W H J P B  D R S I G  
+S O X G K  R C J H L  W P E U M  Y D I V T  B N F Q A  
+T V J D W  G Q N B M  Y R I A H  E F S C L  X U K P O  
+B I F H R  D P S K E  X L O J C  A G Q U N  Y T V M W  
+
+U F L Y O  P S A M K  G C B T R  V W X I H  E D Q J N  
+R T H B P  E D U L O  S F X Y W  Q K G N J  A V M C I  
+C A V J E  W F Y G T  Q I N H P  D M U L R  S X O K B  
+X M I K N  H V C Q R  D J U L A  O E B F S  W G T Y P  
+G Q D W S  X J I N B  O K M V E  C P A T Y  F H R L U  
+
+W N B X L  C K R P Y  F O D G T  H I E A U  V Q J S M  
+D R T P Y  Q G H S A  J E L M U  B V W O K  I C N F X  
+Q C K V F  I U E O X  A H W S B  R J N Y M  T P G D L  
+I J S U G  V B M W N  R X P C K  F L T D Q  O A Y E H  
+E H O M A  T L F D J  I Y V Q N  G S P X C  K W B U R  
+
+alpha_27.txt
+SATISFIABLE
+E G A H W  J S K R U  Q V O L M  F I B P N  C Y D T X  
+S Y O M D  T F B P G  A R C W N  Q E H X V  J U I K L  
+R L P N K  Y Q W A X  T H S F I  D U C J M  O B V G E  
+I X F V T  C N E M L  J D B G U  K W R Y O  S Q A P H  
+U C J B Q  V O D H I  K P Y E X  A L G S T  F R M W N  
+
+F E L U Y  A B S V P  M X J Q C  G N K O H  I W T D R  
+H N B I X  M K L F W  D U T O G  R Q J A S  Y P E C V  
+P K T W O  N C G Y H  V B L S R  M D F I E  A X Q U J  
+A R G J S  O I X D Q  Y E W N F  T C U V P  B L H M K  
+Q M V D C  R J U T E  P I H A K  L B Y W X  N F O S G  
+
+M A I Y B  D E O W F  L J G U S  X R Q T C  H K N V P  
+C W X T F  B M P L V  E Y R K A  J H D N I  U G S O Q  
+G U E S J  H R N I T  X W Q C P  O F V B K  M A Y L D  
+V O N Q H  K A Y U C  B M I D T  E P S G L  R J X F W  
+L P D K R  X G J Q S  H F N V O  U Y W M A  E C B I T  
+
+B H U R A  F T V O D  C K M P J  N G I E W  Q S L X Y  
+T S C P E  U L A J B  R G F H Y  V X M Q D  W O K N I  
+O F Q L N  E P H C Y  I A D X W  B S T K R  V M G J U  
+J D W G M  I X Q N K  S O V B E  P A L U Y  T H F R C  
+K I Y X V  S W M G R  N Q U T L  C J O H F  D E P B A  
+
+N J M O I  L U C B A  G S E Y V  W K P D Q  X T R H F  
+D Q R F L  G H I X J  O N P M B  Y T A C U  K V W E S  
+W B H A U  P Y T E O  F C K I D  S V X R G  L N J Q M  
+Y T S C P  Q V R K N  W L X J H  I M E F B  G D U A O  
+X V K E G  W D F S M  U T A R Q  H O N L J  P I C Y B  
+
+Additional Solution
+E G A H W  J S K R U  Q V O L M  F I B P N  C Y D T X  
+S Y O M D  T F B P G  A R C W N  Q E H X V  J U I K L  
+R L P N K  Y Q W A X  T H S F I  D U C J M  O B V G E  
+I X F V T  C N E M L  J D B G U  K W R Y O  S Q A P H  
+U C J B Q  V O D H I  K P Y E X  A L G S T  F R M W N  
+
+F E L U Y  A B S V P  M X J Q C  G N K O H  I W T D R  
+H N B I X  M K L F W  D U T O G  R Q J A S  Y P E C V  
+P K T W O  N C G Y H  V B L S R  M D F I E  A X Q U J  
+A R G J S  O I X D Q  Y E W N F  T C U V P  B L H M K  
+Q M V D C  R J U T E  P I H A K  L B Y W X  N F O S G  
+
+M A I Y B  D E O W F  L J G U S  X R Q T C  H K N V P  
+C W X T F  B M P L V  E Y R K A  J H D N I  U G S O Q  
+G P E S J  H R N I T  X W Q C O  U F V B K  M A Y L D  
+V O N Q H  K A Y U C  B M I D T  E P S G L  R J X F W  
+L U D K R  X G J Q S  H F N V P  O Y W M A  E C B I T  
+
+B H U R A  F T V O D  C K M P J  N G I E W  Q S L X Y  
+T S C P E  U L A J B  R G F H Y  V X M Q D  W O K N I  
+O F Q L N  E P H C Y  I A D X W  B S T K R  V M G J U  
+J D W G M  I X Q N K  S O V B E  P A L U Y  T H F R C  
+K I Y X V  S W M G R  N Q U T L  C J O H F  D E P B A  
+
+N J M O I  L U C B A  G S E Y V  W K P D Q  X T R H F  
+D Q R F L  G H I X J  O N P M B  Y T A C U  K V W E S  
+W B H A U  P Y T E O  F C K I D  S V X R G  L N J Q M  
+Y T S C P  Q V R K N  W L X J H  I M E F B  G D U A O  
+X V K E G  W D F S M  U T A R Q  H O N L J  P I C Y B  
+
+alpha_19.txt
+No Solution
+alpha_25.txt
+SATISFIABLE
+R S J D X  Q F N U V  M W O T P  L E G Y I  B A C K H  
+M A I O F  B C P S L  J U Y K G  H X D V Q  E N W R T  
+U K W T G  A O I X D  R B Q E H  C S N F P  J L M Y V  
+L E P V B  M R K Y H  A C N I S  W T U O J  F Q D G X  
+H C Q N Y  J W E G T  D L F V X  M R A K B  U O S P I  
+
+C L V F W  I A B P Y  U N G J Q  S M K E O  H X R T D  
+K B E J I  L V Q T G  P S M X O  A U H R D  Y F N C W  
+O U Y G R  C K W N E  B T H D A  X I F P V  L J Q M S  
+Q X A M H  S D U J O  C R L F E  Y N B W T  K I G V P  
+N T D P S  H X F M R  Y K V W I  J C Q L G  O B E A U  
+
+S D K C M  F P Y B I  G A R L J  U O T N X  Q H V W E  
+F R T L N  O E A K C  S Y W B U  Q V J D H  G P X I M  
+P G B I A  U J L Q X  H D E N V  K W Y M C  T R F S O  
+Y Q H E O  V M T D W  I P X C F  R B S G A  N U L J K  
+J W U X V  G S R H N  K Q T O M  F L P I E  A Y B D C  
+
+B H L U J  Y G C W A  X M K P D  I F E Q R  V S T O N  
+A M G Y T  N B D O U  L F J R C  V K X H S  I W P E Q  
+X F O K C  E Q J L S  V I A Y W  G P M T N  R D H U B  
+D N S W P  R I X V M  Q E B H T  O A L J U  C G K F Y  
+V I R Q E  K T H F P  O G S U N  B D W C Y  X M A L J  
+
+G J C A Q  P U M I F  E H D S B  T Y R X K  W V O N L  
+E P M B L  X Y O C K  N J I G R  D H V A W  S T U Q F  
+W O N H D  T L G A B  F V U Q K  E J I S M  P C Y X R  
+T V F R U  D N S E J  W X C A Y  P Q O B L  M K I H G  
+I Y X S K  W H V R Q  T O P M L  N G C U F  D E J B A  
+
+Additional Solution
+R S J D X  Q F N U V  M W O T P  L E G Y I  B A C K H  
+M A I O F  B C P S L  J U Y K G  H X D V Q  E N W R T  
+U K W T G  A O I X D  R B Q E H  C S N F P  J L M Y V  
+L E P V B  M R K Y H  A C N I S  W T U O J  F Q D G X  
+H C Q N Y  J W E G T  D L F V X  M R A K B  U O S P I  
+
+C L V F W  I A B P Y  U N G J Q  S M K E O  H X R T D  
+K B E J I  L V Q T G  P S M X O  A U H R D  Y F N C W  
+O U Y G R  C K W N E  B T H D A  X I F P V  L J Q M S  
+Q X A M H  S D U J O  C R L F E  Y N B W T  K I G V P  
+N T D P S  H X F M R  Y K V W I  J C Q L G  O B E A U  
+
+S D K C M  F P Y B I  G A R L J  U O T N X  Q H V W E  
+F R T L N  O E A K C  S Y W B U  Q V J D H  G P X I M  
+P G B I A  U J L Q X  H D E N V  K W Y M C  T R F S O  
+Y Q H E O  V M T D W  I P X C F  R L S G A  N U B J K  
+J W U X V  G S R H N  K Q T O M  F B P I E  A Y L D C  
+
+B H L U J  Y G C W A  X M K P D  I F E Q R  V S T O N  
+A M G Y T  N B D O U  L F J R C  V K X H S  I W P E Q  
+X F O K C  E Q J L S  V I A Y W  G P M T N  R D H U B  
+D N S W P  R I X V M  Q E B H T  O A L J U  C G K F Y  
+V I R Q E  K T H F P  O G S U N  B D W C Y  X M A L J  
+
+G J C A Q  P U M I F  E H D S B  T Y R X K  W V O N L  
+E P M B L  X Y O C K  N J I G R  D H V A W  S T U Q F  
+W O N H D  T L G A B  F V U Q K  E J I S M  P C Y X R  
+T V F R U  D N S E J  W X C A Y  P Q O B L  M K I H G  
+I Y X S K  W H V R Q  T O P M L  N G C U F  D E J B A  
+
+alpha_30.txt
+SATISFIABLE
+G Y R P M  H A T U S  V J B L D  Q N W F C  X K E I O  
+Q K X O U  M B G F W  P R C Y I  V L E T H  N S J A D  
+W A B L T  I P R K N  E M O F Q  J S Y D X  V H C G U  
+C V D E N  L Q O J Y  S K X G H  B I R A U  M W F T P  
+J S F I H  D C V E X  U A N T W  O K M G P  R L Y B Q  
+
+L T P K O  G S F R H  C B J X E  Y V U N W  Q M A D I  
+H D N V W  E I Y C M  G F T P O  A J Q X L  S B R U K  
+S J A B X  Q O K V U  H W Y I R  P T D M G  F E L N C  
+R U Y Q C  W J A B D  L V M S N  F E O K I  T P X H G  
+M G I F E  N L X P T  A D K Q U  C H S R B  Y J O V W  
+
+A B K U F  O T L H E  N S R C P  X Q G V Y  W D I J M  
+O E L C V  Y U M Q P  X G W D J  T A H I N  B F S K R  
+N P G M J  R K S I B  O T H A V  D W F C E  L X U Q Y  
+D H W R Q  A N C X F  M I L B Y  S P K U J  E T G O V  
+I X S T Y  J G W D V  F E Q U K  R B L O M  A C N P H  
+
+E L O Y P  C M J S R  B H G W F  K U A Q T  D I V X N  
+B M T X I  V Y P L G  R C U N S  H D J W O  K A Q E F  
+F R U D G  K E N W Q  T Y A J M  I X B L V  H O P C S  
+V N H J A  B X D O I  K Q P E L  M F C Y S  G U W R T  
+K C Q W S  U F H T A  I O D V X  N G P E R  J Y B M L  
+
+U F E A L  T H I Y J  W X V M C  G R N P K  O Q D S B  
+P Q M H R  F W B G C  J N E K A  L O I S D  U V T Y X  
+X I C G B  S D E A O  Y U F R T  W M V H Q  P N K L J  
+Y W V N K  X R Q M L  D P S O B  U C T J A  I G H F E  
+T O J S D  P V U N K  Q L I H G  E Y X B F  C R M W A  
+
+Additional Solution
+G Y R P M  H A T U S  V J B L D  Q N W F C  X K E I O  
+Q K X O U  M B G F W  P R C Y I  V L E T H  N S J A D  
+W A B L T  I P R K N  E M O F Q  J S Y D X  V H C G U  
+C V D E N  L Q O J Y  S K X G H  B I R A U  M W F T P  
+J S F I H  D C V E X  U A N T W  O K M G P  R L Y B Q  
+
+L T P K O  G S F R H  C B J X E  Y V U N W  Q M A D I  
+H D V N W  E I Y C M  G F T P O  A J Q X L  S B R U K  
+S J A B X  Q O K V U  H W Y I R  P T D M G  F E L N C  
+R U Y Q C  W J A B D  L V M S N  F E O K I  T P X H G  
+M G I F E  N L X P T  A D K Q U  C H S R B  Y J O V W  
+
+A B K U F  O T L H E  N S R C P  X Q G V Y  W D I J M  
+O E L C V  Y U M Q P  X G W D J  T A H I N  B F S K R  
+N P G M J  R K S I B  O T H A V  D W F C E  L X U Q Y  
+D H W R Q  A N C X F  M I L B Y  S P K U J  E T G O V  
+I X S T Y  J G W D V  F E Q U K  R B L O M  A C N P H  
+
+E L O Y P  C M J S R  B H G W F  K U A Q T  D I V X N  
+B M T X I  V Y P L G  R C U N S  H D J W O  K A Q E F  
+F R U D G  K E N W Q  T Y A J M  I X B L V  H O P C S  
+V N H J A  B X D O I  K Q P E L  M F C Y S  G U W R T  
+K C Q W S  U F H T A  I O D V X  N G P E R  J Y B M L  
+
+U F E A L  T H I Y J  W X V M C  G R N P K  O Q D S B  
+P Q M H R  F W B G C  J N E K A  L O I S D  U V T Y X  
+X I C G B  S D E A O  Y U F R T  W M V H Q  P N K L J  
+Y W N V K  X R Q M L  D P S O B  U C T J A  I G H F E  
+T O J S D  P V U N K  Q L I H G  E Y X B F  C R M W A  
+
+alpha_24.txt
+SATISFIABLE
+J C S N G  U X O Q F  E A W P B  L D I T Y  M K H V R  
+A E R U M  J N L S P  T F D V Y  H C B X K  I Q O G W  
+L F K D X  A B G Y V  I H M Q U  J W O P R  T E S C N  
+B V Y O W  R D I H T  N S J C K  G M Q U E  L F X P A  
+H P T Q I  E K C W M  G O R L X  N A S F V  J B D U Y  
+
+D O U C L  B A S R W  H X G M I  K Q Y J T  V N P E F  
+W A F S P  D E K O J  B T U N C  V H G M I  R Y L X Q  
+M T I K V  X F N C H  S Q E Y R  W O A L P  U D J B G  
+G N J H Q  L Y U V I  A D F W P  B S E R X  C M K O T  
+E R B X Y  G T M P Q  O L V K J  C N U D F  S H W A I  
+
+U K L I S  C O V A B  F P T X E  R J M N Q  H W G Y D  
+T W P A F  M U Y N G  R C O J S  X I D V H  E L B Q K  
+X Q C V R  T J W F L  D N B H M  P E K Y G  A I U S O  
+Y M G B E  S H P D X  V W K I Q  T U L O A  F J R N C  
+O D H J N  I Q R E K  L G Y U A  S F W B C  P X T M V  
+
+R U W L O  Y G J M S  P B Q E V  A X C K D  N T F I H  
+P B E M C  O V F L R  Y K X G N  I T J H W  Q S A D U  
+S I V Y K  H C Q X D  W R A T L  F P N G U  B O M J E  
+F J N T D  W P A K U  M I H S O  E B V Q L  G C Y R X  
+Q X A G H  N I B T E  J U C F D  O Y R S M  K P V W L  
+
+V Y X R A  P S T I O  K M L B W  Q G F C N  D U E H J  
+C S M F U  K W H B N  X J I R G  D V T E O  Y A Q L P  
+I G O P T  Q L E J Y  U V N D H  M K X A B  W R C F S  
+K L D W J  V M X U C  Q E P A F  Y R H I S  O G N T B  
+N H Q E B  F R D G A  C Y S O T  U L P W J  X V I K M  
+
+Additional Solution
+J C S N G  U X O Q F  E A W P B  L D I T Y  M K H V R  
+A E R U M  J N L S P  T F D V Y  H C B X K  I Q O G W  
+L F K D X  A B G Y V  I H M Q U  J W O P R  T E S C N  
+B V Y O W  R D I H T  N S J C K  G M Q U E  L F X P A  
+H P T Q I  E K C W M  G O R L X  N A S F V  J B D U Y  
+
+D O U C L  B A S R W  H X G M I  K Q Y J T  V N P E F  
+W A F S P  D E K O J  B T U N C  V H G M I  R Y L X Q  
+M T I K V  X F N C H  S Q E Y R  W O A L P  U D J B G  
+G N J H Q  L Y U V I  A D F W P  B S E R X  C M K O T  
+E R B X Y  G T M P Q  O L V K J  C N U D F  S H W A I  
+
+U K L I S  C O V A B  F P T X E  R J M N Q  H W G Y D  
+T W P A F  M U Y N G  R C O J S  X I D V H  E L B Q K  
+X Q C V R  T J W F L  D N B H M  P E K Y G  A I U S O  
+Y M G B E  S H P D X  V W K I Q  T U L O A  F J R N C  
+O D H J N  I Q R E K  L G Y U A  S F W B C  P X T M V  
+
+R U W L O  Y G J M S  P B Q E V  A X C K D  N T F I H  
+P B E M C  O V F L R  Y K X G N  I T J H W  Q S A D U  
+S I V Y K  H C Q X D  W R A T L  F P N G U  B O M J E  
+F J N T D  W P A K U  M I H S O  E B V Q L  G C Y R X  
+Q X A G H  N I B T E  J U C F D  O Y R S M  K P V W L  
+
+V Y X R A  P S T I O  K M L B W  Q G F C N  D U E H J  
+C S M F U  K W H B N  X J I R G  D V T E O  Y A Q L P  
+I G O P T  Q L E J Y  U V N D H  M K X A S  W R C F B  
+K L D W J  V M X U C  Q E P A F  Y R H I B  O G N T S  
+N H Q E B  F R D G A  C Y S O T  U L P W J  X V I K M  
+
+alpha_18.txt
+No Solution
