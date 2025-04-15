@@ -1,5 +1,10 @@
 import os
-import shutil
+import subprocess
+
+def run_minisat(cnf_path, output_path):
+    result = subprocess.run(["minisat", cnf_path, output_path], capture_output=True, text=True)
+    print("MiniSat output:\n", result.stdout)
+    return result.returncode
 
 
 letter_dict = {
@@ -30,6 +35,35 @@ letter_dict = {
     'Y': 25
 }
 
+int_to_letter = {
+    1: 'A',
+    2: 'B',
+    3: 'C',
+    4: 'D',
+    5: 'E',
+    6: 'F',
+    7: 'G',
+    8: 'H',
+    9: 'I',
+    10: 'J',
+    11: 'K',
+    12: 'L',
+    13: 'M',
+    14: 'N',
+    15: 'O',
+    16: 'P',
+    17: 'Q',
+    18: 'R',
+    19: 'S',
+    20: 'T',
+    21: 'U',
+    22: 'V',
+    23: 'W',
+    24: 'X',
+    25: 'Y'
+}
+
+
 
 def cell_to_var(row: int, col: int, letter: int) -> int:
     
@@ -38,6 +72,15 @@ def cell_to_var(row: int, col: int, letter: int) -> int:
 
 def var_to_cell(var):
     pass
+
+def var_to_letter(var):
+    remainder = var % 25
+    if remainder == 0:
+        remainder = 25
+
+    return int_to_letter[remainder]
+
+
 
 
 def at_most_one_letter_per_cell(file):
@@ -297,6 +340,17 @@ def generate_puzzle_cnf_files():
         process_alpha_file(file_path, file_name)
 
 
+def solve_cnfs():
+    directory = 'cnf'
+    output_dir = 'results'
+    for file_name in os.listdir(directory):
+        file_path = os.path.join(directory, file_name)
+
+        output_path = os.path.join(output_dir, file_name[:-3] + 'txt')
+        run_minisat(file_path, output_path)
+
+
+
 def read_output_file(file_path):
     vars = []
 
@@ -309,18 +363,29 @@ def read_output_file(file_path):
         print(f'Cnt Vars: {len(valid)}')
 
         vars = [valid[ i*25 : (i+1)*25] for i in range(25)]
-        vars = []
-        print(vars)
+        
+        solved = []
+
+        for row in range(25):
+
+            new_row = []
+            for col in range(25):
+                new_row.append(var_to_letter(vars[row][col]))
+
+            solved.append(new_row)
+                
+
+        print(solved)
 
 
 
 
 def main():
     # generate_base_cnf_file('base2.cnf')
-    # run_experiment()
-
-    generate_puzzle_cnf_files()
+    # generate_puzzle_cnf_files()
     # read_output_file('results/alpha_0.txt')
+
+    solve_cnfs()
 
 
 if __name__ == '__main__':
